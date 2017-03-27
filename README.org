@@ -1,0 +1,6 @@
+次文件夹用于我的org笔记包括
+* c 语言笔记
+* python语言笔记
+* renforcement learning 增强学习笔记
+* opensuse 使用笔记
+* reading book 最近读书的笔记
