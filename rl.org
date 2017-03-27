@@ -1,0 +1,87 @@
+
+* 增强学习RL的学习笔记
+** 基础概念
+*** 什么是增强学习
+
+增强学习（reinforcementlearning, RL）又叫做强化学习，是近年来机器学习和智能控制领域的主要方法之一。
+
+也就是说增强学习关注的是智能体如何在环境中采取一系列行为，从而获得最大的累积回报。
+
+通过增强学习，一个智能体应该知道在什么状态下应该采取什么行为。RL是从环境状态到动作的映射的学习，我们把这个映射称为策略。
+
+*** 那么增强学习具体解决哪些问题，以及一些例子：
+
+1. flappy bird 是现在很流行的一款小游戏，不了解的同学可以点链接进去玩一会儿。现在我们让小鸟自行进行游戏，但是我们却没有小鸟的动力学模型，也不打算了解它的动力学。要怎么做呢？ 这时就可以给它设计一个增强学习算法，然后让小鸟不断的进行游戏，如果小鸟撞到柱子了，那就获得-1的回报，否则获得0回报。通过这样的若干次训练，我们最终可以得到一只飞行技能高超的小鸟，它知道在什么情况下采取什么动作来躲避柱子。
+
+2. 假设我们要构建一个下国际象棋的机器，这种情况不能使用监督学习，首先，我们本身不是优秀的棋手，而请象棋老师来遍历每个状态下的最佳棋步则代价过于昂贵。其次，每个棋步好坏判断不是孤立的，要依赖于对手的选择和局势的变化。是一系列的棋步组成的策略决定了是否能赢得比赛。下棋过程的唯一的反馈是在最后赢得或是输掉棋局时才产生的。这种情况我们可以采用增强学习算法，通过不断的探索和试错学习，增强学习可以获得某种下棋的策略，并在每个状态下都选择最有可能获胜的棋步。目前这种算法已经在棋类游戏中得到了广泛应用。
+ 
+*** 增强学习和监督学习的区别主要有以下两点
+1.  增强学习是试错学习(Trail-and-error)，由于没有直接的指导信息，智能体要以不断与环境进行交互，通过试错的方式来获得最佳策略。
+
+2.  延迟回报，增强学习的指导信息很少，而且往往是在事后（最后一个状态）才给出的，这就导致了一个问题，就是获得正回报或者负回报以后，如何将回报分配给前面的状态。
+
+增强学习是机器学习中一个非常活跃且有趣的领域，相比其他学习方法，增强学习更接近生物学习的本质，因此有望获得更高的智能，这一点在棋类游戏中已经得到体现。Tesauro(1995)描述的TD-Gammon程序，使用增强学习成为了世界级的西洋双陆棋选手。这个程序经过150万个自生成的对弈训练后，已经近似达到了人类最佳选手的水平，并在和人类顶级高手的较量中取得40 盘仅输1盘的好成绩。
+
+*** rl 的基本元素
+ + A policy defines the learning agent's way of behaving at a given time
+ + a *reward function* indicates what is good in an immediate sense, a *value function* specifies what is good in the long run
+ + the model of environments
+*** rl 的难点所在
+1. 在增强学习中，我们动作的结果通常是有延迟的，因此想要识别并从动作的长期效果中学习变得更加困难了。例如下棋，如果我们在第63手的时候输了（或者赢了），可能非常重要的一点是需要认识到我们在第17手的时候下的一记妙手奠定了胜局。这个“可信度分配（credit assignment）”问题让算法从过去的失误中吸取教训或从过去的成功中学习经验都更加困难了。
+2. 在增强学习问题中的连续环境让算法重用（reuse）数据变得更加困难。在有监督学习中，如果我们预先收集并且存储了一些病人的样本数据集，并且想要测试一个新的神经网络在心脏病预测方面的性能，那么我们可以很容易地在这些数据集上进行测试，并分析结果与真实情况之间的差异，从而得出新模型的性能好坏。然而在增强学习中，假设我们也预先测试了一个控制直升机翻转飞行的控制器（或者举个更自然的例子，控制直升机稍微向右倾斜的控制器），在测试期间收集的数据是可以让我们知道直升机是如何翻转飞行的，但是如何使用这些数据来评价一个控制直升机稳定平飞的新控制器呢？目前还不清楚。因此，如果，新控制器控制直升机飞行的方式与之前的不同，那么对于每个新的控制器，我们都需要收集新的数据来进行测试。这个性质使得增强学习相较于有监督学习需要更多的数据
+
+** 马尔可夫决策过程 MDP
+*** 马尔可夫决策过程(Markov Decision Process, MDP)
+
+也具有马尔可夫性[fn:1]，与马尔可夫链不同的是MDP考虑了动作，即系统下个状态不仅和当前的状态有关，也和当前采取的动作有关。还是举下棋的例子，当我们在某个局面（状态s）走了一步(动作a)，这时对手的选择（导致下个状态s’）我们是不能确定的，但是他的选择只和s和a有关，而不用考虑更早之前的状态和动作，即s’是根据s和a随机生成的。
+
+我们用一个二维表格表示一下，各种马尔可夫子模型的关系就很清楚了：
+#+table
+   |                | 不考虑动作          | 考虑动作                            |
+   | 状态完全可见   | 马尔科夫链(MC)      | 马尔可夫决策过程(MDP )              |
+   | 状态不完全可见 | 隐马尔可夫模型(HMM) | 不完全可观察马尔可夫决策过程(POMDP) |
+   
+
+* DQN deep q network
+在Q Learning 算法中，我们有一个叫做Q Function的函数，我们用这个函数来根据当前的state估计reward。同理呢，Deep Q Network 通过神经网络来实现Q Function同样的功能
+** DQN的实现细节 [[https://keon.io/rl/deep-q-learning-with-keras-and-gym/][参考网址]]
+1. 暂时先将神经网络看作是一个黑盒，他自己会训练数据并且根据你给的input输出output
+2. DQN的神经网络有两层hidden layer,如下图所示
+[[./org_picture/neuralnet.png]]
+
+3. dqn的neural network有两个比较重要的方法：remember and replay。
+在reforcement learning中，有一个q_table的表格，记录每个state，每个action对应的概率。而Deep Q Network中，我们不用Q-table了而是用神经网络
+来预测某一个状态对应的动作的概率。这样训练过程就不再和Q-table不一样了。我们用rember和replay来更新我们的神经网络。
+  
+  + *remember:*
+	使用神经网络的一个问题是神经网络将覆盖以前的一些经历导致“忘掉”以前的经历。而remember方法将我们进行的每一步都记录下来，
+  + *replay:*
+    然后进行重新训练。这个过程只是将一部分记录拿出来重新训练（甚至是别人的经历）我们的模型，我们把这些重新进行训练的记录叫batches，下面是replay的训练过程
+    #+BEGIN_SRC python -n
+    for i in batches:
+       # Extract informations from i-th index of the memory
+       state, action, reward, next_state = self.memory[i]
+     
+       # if done, make our target reward (-100 penality)
+       target = reward
+     
+       if not done:
+         # predict the future discounted reward
+         target = reward + self.gamma * \
+                  np.amax(self.model.predict(next_state)[0])
+       
+       # make the agent to approximately map
+       # the current state to future discounted reward
+       # We'll call that target_f
+       target_f = self.model.predict(state)
+       target_f[0][action] = target
+       
+       # Train the Neural Net with the state and target_f
+       self.model.fit(state, target_f, nb_epoch=1, verbose=0)
+    #+END_SRC
+
+   
+* Footnotes
+
+[fn:1] 马尔可夫性: 即无后效性，也就是指系统的下个状态只与当前状态信息有关，而与更早之前的状态无关。
+ 
