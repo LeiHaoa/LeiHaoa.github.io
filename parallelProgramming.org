@@ -1,2 +1,9 @@
 并行程序设计
-* MPI
+* MPI (Message-Passing Interface)
+** 编译运行
+MPI的编译器使用mpicc，mpicc是c语言编译器的包装脚本。就是在原本编译器的基础上加上某些头文件、依赖什么的
+#+BEGIN_SRC shell
+$ mpicc -g -Wall -o mpi_hello mpi_hello.c
+#+END_SRC
+
+** 

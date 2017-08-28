@@ -1,0 +1,11 @@
+* RNN
++ dropout: 在RNN中仅仅在同一时刻的多层cell之间传递信息的时候进行dropout[fn:1]。
++ 
+
+** 参考网址
+[[http://mp.weixin.qq.com/s/K1TiFo-7Ap3-bZQyjqj_ig][探索LSTM：基本概念到内部结构]]
+
+
+* Footnotes
+
+[fn:1]  所谓dropout,就是指网络中每个单元在每次有数据流入时以一定的概率(keep prob)正常工作，否则输出0值

@@ -1,0 +1,224 @@
+Multivarite Time Series Analysis
+
+* 概念知识
+** 弱平稳
+弱平稳就是说Zt的均值和协方差矩阵不依赖于时间t，即zt的前两阶矩不随时间变化。（一个隐函条件是这两个统计变量都是存在的）
+
+k维时间序列的意思是
+
+** 线性
+z_t = μ + Σ_(0-)
+
+** 交叉相关矩阵
+   + 滞后为l的 *交叉协方差矩阵* ：τ_l=Cov(z_t,z_(t-l)) 
+   + 滞后为l的 *交叉相关矩阵* :CCMρ_l = D^-1 τ_1 D^-1
+
+这两个变量的估计方值在1.4有介绍
+
+** 多元混成检验
+Ljung-Box检验统计量Q_k(m)
+
+** 自回归模型（AR）、移动平均模型（MA）、自回归移动平均模型（ARMA）以及差分自回归移动平均模型（ARIMA）辨析  
+   短期预测是我们做时间序列分析的主要目的。
+
+        时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其未来的取值。
+ 
+       上述思路的直接体现便是自回归模型。所谓p阶自回归过程（AutoRegressive, AR），简记为AR（p)，指的是如下形式的随机过程：
+
+         yt=a1yt-1+a2yt-2+....+apyt-p+ut
+
+        其中的a1、a2、...、ap是p个待求参数；p是滞后期限的数目；ut为白噪声，也就是满足经典计量经济模型要求的随机误差项。
+
+       一般地说，在经济系统中，任何经济变量的时间序列都可以使用上述自回归过程来描述。但在模型分析的实践中，为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。
+
+       考虑如下形式的（无穷阶）自回归过程：
+
+       yt=ayt-1+a^2yt-2+....+a^pyt-p+....+ut   
+
+将其时间推迟一期，有：
+
+       yt-1=ayt-2+a^2yt-3+....+a^pyt-p-1+ut-1
+
+再将上式两侧的每一项同乘以a，然后与该自回归过程的原始表达式相减，得到：
+
+      yt=ut-aut-1
+
+        我们就把这种由白噪声序列诸元素的加权和所表示的随机过程，称作移动平均过程(moving average process MA)。其中的参数数目就是该移动平均过程的阶数。例如，上式就是一个一阶移动平均过程，简记为MA（1）。
+
+       （本博主2016年11月30日注：在本博文前面所给出的AR（P)模型 yt=a1yt-1+a2yt-2+....+apyt-p+ut中，a1、a2、...、ap中的1、2、...、p均为相应a的下角标；而在这里所给出的无穷阶自回归过程yt=ayt-1+a^2yt-2+....+a^pyt-p+....+ut 中，a^1、a^2、...、a^p中的1、2、...、p均为相应a的上角标，亦即a的一次方、二次方，直至p次方。这就意味着，在前一个AR（P)中，我对自回归系数的取值并无特别要求；但在后一个AR（P)中，我却假设各个自回归系数的取值呈有规律的倍数关系。这纯粹是为了阐述逻辑的需要，是在可接受范围内的逻辑简化。诚如《庖丁解牛》云，臣之所好者，道也，进乎技矣，未尝见全牛也。因此，这种简化分析的能力实在是本博主造诣高超的具体表现，我的造诣显然在“三年之后”矣。呵呵） 
+
+        一般地，q阶移动平均过程MA（q）就是如下形式的随机过程：
+
+       yt=ut-(b1ut-1)-(b2ut-2)-(b3ut-3)-.....-(bqut-q)
+
+       由此可见，移动平均过程实际上是由自回归过程推衍而得的结果。
+
+       我们可以证明：一个平稳有限阶自回归过程必定可以转化成某个无限阶移动平均过程。反之，当某些条件（称之为可转换条件）具备的时候，一个有限阶移动平均过程也可以转换成某个无限阶自回归过程。于是，我们便可以将阶数较高的自回归过程近似地用阶数较低的移动平均过程来代替；反之，亦然。
+
+       那么，对于一个给定的时间序列样本，如何才能以最少的待估参数给出产生这一样本的随机过程呢？
+
+       一般说来，设若时间序列的自相关函数有截断点，即当阶数大于某个数值的时候，其自相关系数开始等于零，但其偏自相关系数却只是伴随着阶数的增大而逐渐减小，并无截断点，这时采取移动平均过程比较经济（亦即模型当中所包含的的参数较少）。
+
+       设若时间序列的自相关函数只是伴随着阶数的增加而逐渐衰减，并无截断点，但其偏自相关函数却有截断点，这时宜采用自回归过程。
+
+       设若时间序列的自相关函数和偏自相关函数都只是伴随着阶数的增加而逐渐衰减，但均无截断点，则无论是采用自回归模型还是采用移动平均模型，其中所包含的的待估参数都过多。这时，宜采用自回归移动平均过程ARMA（p,q）。
+
+       所谓的自回归移动平均模型(Autoregressive Moving Average,ARMA)，就是设法将自回归过程AR和移动平均过程MA结合起来，共同模拟产生既有时间序列样本数据的那个随机过程的模型。
+
+       在数学上，我们总可以将一个高阶AR过程分解成某个低阶AR过程和另一个高阶AR过程之和。设若将其中所分解出来的那个高阶AR过程用一个较低阶的MA过程来替代，则那个真实的随机过程也就由低阶AR过程和高阶AR过程之和，变换成低阶AR过程与低阶MA过程之和。这就是自回归移动平均模型的基本思路。
+
+       可见，ARMA（p,q）是一种比AR(p）和MA(q)更具普遍性的模型。而AR(p）模型和MA(q)模型可分别理解为ARMA模型的两个特例(ARMA（P,0)和ARMA(0,q))。实践中的任何时间序列都可以使用ARMA（p,q）这个模型来模拟。而且经济计量的实践经验表明，p的q的取值一般都不会超过2。
+
+       需要指出的是，AR(p)、MA(q)和ARMA(p,q)都是平稳随机过程。但在经济计量的实践中，我们所获得的时间序列经常会呈现出系统性地上升或下降等趋势。有些时间序列还呈现出周而复始的周期性波动。这样的时间序列肯定产生于非平稳的随机过程，从而不可以直接套用诸如AR(p)、MA(q)或ARMA(p,q)之类的平稳随机过程来模拟。
+
+       对于非平稳的时间序列，首先应将其平稳化。其中，差分变换是最常用的平稳化方法。然后再使用  AR(p)、MA(q)或ARMA(p,q)来模拟已平稳化的随机过程。这就是所谓的差分自回归移动平均模型(Autoregressive Integrated Moving Average Model），简记为ARIMA(p,d,q)。其中的d是实施差分变换的次数。
+
+       由此可见，ARIMA（p,d,q）是一种比ARMA（p,q）更为普遍性的模型。而ARMA（p,q）可理解为ARIMA（p,d,q）的特例(ARIMA（p,0,q）)。
+
+       对于一组给定的时间序列数据，依照上述思路寻找一个能产生这组数据的随机过程的ARIMA（p,d,q）模型方法，称为博克斯-詹金斯(Box-Jenkins)方法。它是当今主流时间序列分析理论与方法的基础。
+* R代码解释
+** VAR 源代码
+#+BEGIN_SRC R
+function (x, p = 1, output = T, include.mean = T, fixed = NULL) 
+{
+  if (!is.matrix(x)) 
+    x = as.matrix(x)
+  Tn = dim(x)[1]
+  k = dim(x)[2]
+  if (p < 1) 
+    p = 1
+  idm = k * p
+  ne = Tn - p
+  ist = p + 1
+  y = x[ist:Tn, ]
+  if (include.mean) {
+    idm = idm + 1
+    xmtx = cbind(rep(1, ne), x[p:(Tn - 1), ])
+  }
+  else {
+    xmtx = x[p:(Tn - 1), ]
+  }
+  if (p > 1) {
+    for (i in 2:p) {
+      xmtx = cbind(xmtx, x[(ist - i):(Tn - i), ])
+    }
+  }
+  ndim = ncol(xmtx)
+  if (length(fixed) == 0) {
+    paridx = matrix(1, ndim, k)
+  }
+  else {
+    paridx = fixed
+  }
+  res = NULL
+  beta = matrix(0, ndim, k)
+  sdbeta = matrix(0, ndim, k)
+  npar = 0
+  for (i in 1:k) {
+    idx = c(1:ndim)[paridx[, i] == 1]
+    resi = y[, i]
+    if (length(idx) > 0) {
+      xm = as.matrix(xmtx[, idx])
+      npar = npar + dim(xm)[2]
+      xpx = t(xm) %*% xm
+      xpxinv = solve(xpx)
+      xpy = t(xm) %*% as.matrix(y[, i], ne, 1)
+      betai = xpxinv %*% xpy
+      beta[idx, i] = betai
+      resi = y[, i] - xm %*% betai
+      nee = dim(xm)[2]
+      sse = sum(resi * resi)/(Tn - p - nee)
+      dd = diag(xpxinv)
+      sdbeta[idx, i] = sqrt(dd * sse)
+    }
+    res = cbind(res, resi)
+  }
+  sse = t(res) %*% res/(Tn - p)
+  aic = 0
+  bic = 0
+  hq = 0
+  Phi = NULL
+  Ph0 = NULL
+  jst = 0
+  if (include.mean) {
+    Ph0 = beta[1, ]
+    se = sdbeta[1, ]
+    if (output) {
+      cat("Constant term:", "\n")
+      cat("Estimates: ", Ph0, "\n")
+      cat("Std.Error: ", se, "\n")
+    }
+    jst = 1
+  }
+  if (include.mean) {
+    for (i in 1:k) {
+      if (abs(Ph0[i]) > 1e-08) 
+        npar = npar - 1
+    }
+  }
+  if (output) 
+    cat("AR coefficient matrix", "\n")
+  for (i in 1:p) {
+    phi = t(beta[(jst + 1):(jst + k), ])
+    se = t(sdbeta[(jst + 1):(jst + k), ])
+    if (output) {
+      cat("AR(", i, ")-matrix", "\n")
+      print(phi, digits = 3)
+      cat("standard error", "\n")
+      print(se, digits = 3)
+    }
+    jst = jst + k
+    Phi = cbind(Phi, phi)
+  }
+  if (output) {
+    cat(" ", "\n")
+    cat("Residuals cov-mtx:", "\n")
+    print(sse)
+    cat(" ", "\n")
+  }
+  dd = det(sse)
+  d1 = log(dd)
+  aic = d1 + (2 * npar)/Tn
+  bic = d1 + log(Tn) * npar/Tn
+  hq = d1 + 2 * log(log(Tn)) * npar/Tn
+  if (output) {
+    cat("det(SSE) = ", dd, "\n")
+    cat("AIC = ", aic, "\n")
+    cat("BIC = ", bic, "\n")
+    cat("HQ  = ", hq, "\n")
+  }
+  VAR <- list(data = x, cnst = include.mean, order = p, coef = beta, 
+    aic = aic, bic = bic, hq = hq, residuals = res, secoef = sdbeta, 
+    Sigma = sse, Phi = Phi, Ph0 = Ph0)
+}
+#+END_SRC
+
+
+#+END_SRC
+* R语言函数的一些注释
+** diff(x,lag,differences)
+diff是返回滞后的迭代差异。
+
+意思就是dif(1:10,2)的话就是所有数减去他的前2个数的值，所以是（2,2,2,2,2,2,2,2）一共8个数，因为1和2没有滞后2个的数
+同理diff(1:10,6) = (6,6,6,6)
+
+参数：
+  + x： 数据
+  + lag：滞后的步数
+  + differences：没用到所以暂时不研究
+
+** rmvnorm
+   rmvnorm函数生成一个真态分布的数据，其中300是向量矩阵，rep(0.2)=(0,0),表示两列向量的均值都是0，di
+** solve(A,B) 
+这个函数是求解 Ax=B的x，即 x = B%*%A^-1。
+
+如果只是solve(A)的话，那么就是求A矩阵的逆
+
+* QUESTIONS
+1. 方程的phi是怎么确定的？？在例子程序中，都是直接给出来的。那么在实际中呢？？？
+   解：是估计出来的，在模型估计中有公式
+2. VAR模型中的Sigmaa是什么用途的？？
+   解：Sigma是残差协方差矩阵，是用来进行模型估计的。在VAR(p)模型的估计过程，主要估计的就是Phi和Sigma。
+3. 还不知道怎么怎么评价VAR模型？是通过什么指标来评测
+4. sigma（协方差矩阵）的意义是什么
+   
