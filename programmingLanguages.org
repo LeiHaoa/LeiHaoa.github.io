@@ -1,0 +1,23 @@
+* python
+** Python中的字符串执行函数 
++ *exec语句用来执行储存在字符串或文件中的Python语句。*
+
+我们可以在运行时生成一个包含Python代码的字符串，然后使用exec语句执行这些语句。
+ #+BEGIN_SRC python
+  exec("print('Hello World')")
+  print("hell")
+ #+END_SRC
+
+运行结果：
+Hello World
+
++ *eval语句用来计算存储在字符串中的有效Python表达式。*
+#+BEGIN_SRC python
+eval_r("2 * 3")
+#运行结果：
+#6
+#+END_SRC
+
+* R
+* C
+* scala
