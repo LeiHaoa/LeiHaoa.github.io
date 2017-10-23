@@ -357,6 +357,10 @@ spacemace 和 prelude感觉都可以
 
 #+END_SRC
 
+* plugins
+** counsel-ag
++ 用的是命令行下的ag命令
++ 如果要有需要忽略的文件，在搜索目录下新建一个.ignore文件，把文件名写进去就行
 * tmp
 * Footnotes
 

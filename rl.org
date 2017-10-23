@@ -81,7 +81,16 @@
        self.model.fit(state, target_f, nb_epoch=1, verbose=0)
     #+END_SRC
 
-   
+
+* Policy Gradient   
+** 基本概念讲解  [[https://zhuanlan.zhihu.com/p/21725498][参考网址]]
+** policy gradient与DQN之间的关系
+1. DQN 
+   + 输出是s-a对应的value
+   + 就算是e-greddy策略，也只是e的概率随机进行action的选择
+2. policy gradient
+   + 直接求得是每一个action对应的概率
+
 * Footnotes
 
 [fn:1] 马尔可夫性: 即无后效性，也就是指系统的下个状态只与当前状态信息有关，而与更早之前的状态无关。

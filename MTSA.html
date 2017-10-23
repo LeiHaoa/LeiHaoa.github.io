@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-09-29 周五 14:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org650a76c">1. R代码解释</a>
+<ul>
+<li><a href="#org694ddb9">1.1. VAR 源代码</a></li>
+<li><a href="#orgeaf19af">1.2. VARpred 函数源码</a></li>
+<li><a href="#org702700d">1.3. VMA函数</a></li>
+</ul>
+</li>
+<li><a href="#orga952be0">2. 概念知识</a>
+<ul>
+<li><a href="#orgfb11e7e">2.1. 弱平稳</a></li>
+<li><a href="#org6eb4511">2.2. 线性</a></li>
+<li><a href="#org39cec52">2.3. 交叉相关矩阵</a></li>
+<li><a href="#org9016c14">2.4. 多元混成检验</a></li>
+<li><a href="#org131b0a9">2.5. 自回归模型（AR）、移动平均模型（MA）、自回归移动平均模型（ARMA）以及差分自回归移动平均模型（ARIMA）辨析</a></li>
+<li><a href="#org20a48ac">2.6. 不存在封闭解</a></li>
+<li><a href="#orgc334e32">2.7. 残差</a></li>
+</ul>
+</li>
+<li><a href="#orgab8916a">3. R语言函数的一些注释</a>
+<ul>
+<li><a href="#orgefa1f44">3.1. diff(x,lag,differences)</a></li>
+<li><a href="#orgb5448a8">3.2. rmvnorm</a></li>
+<li><a href="#org747a3f2">3.3. Mod(V)</a></li>
+<li><a href="#orgb208366">3.4. solve(A,B)</a></li>
+<li><a href="#orgb724d88">3.5. nlminb 函数</a></li>
+<li><a href="#org27ee954">3.6. dnorm(x,mean,sd)</a></li>
+</ul>
+</li>
+<li><a href="#org473d1cd">4. QUESTIONS</a></li>
+<li><a href="#org8970b63">5. 改成C语言的可能障碍</a>
+<ul>
+<li><a href="#orgb952de5">5.1. <span class="done DONE">DONE</span> eigen函数 是矩阵的谱分解函数，不知道C语言里面有没有相应的函数来解决矩阵的谱分解</a></li>
+<li><a href="#org7590795">5.2. <span class="done DONE">DONE</span> solve函数来求矩阵的逆</a></li>
+<li><a href="#orgc21f0e9">5.3. <span class="todo TODO">TODO</span> 还有一个nlminb函数是一个优化函数，不知道具体是怎么实现的。可能还需要在深入看这个函数的源代码</a></li>
+</ul>
+</li>
+<li><a href="#orgfab8b0c">6. 一些函数的c语言版本：</a>
+<ul>
+<li><a href="#org0d108e4">6.1. eigen函数</a></li>
+<li><a href="#org68f71a1">6.2. 矩阵求逆</a></li>
+</ul>
+</li>
+<li><a href="#org1a1a49a">7. 随想</a>
+<ul>
+<li><a href="#org5569ee7">7.1. 一些东西短时间内看不明白，不要放弃，坚持每天看的话真的是每天都有顿悟的时刻的。</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Multivarite Time Series Analysis
+</p>
+<div id="outline-container-org650a76c" class="outline-2">
+<h2 id="org650a76c"><span class="section-number-2">1</span> R代码解释</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org694ddb9" class="outline-3">
+<h3 id="org694ddb9"><span class="section-number-3">1.1</span> VAR 源代码</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-python">function <span style="color: #4f97d7;">(</span>x, p = <span style="color: #a45bad;">1</span>, output = T, include.mean = T, fixed = NULL<span style="color: #4f97d7;">)</span> 
+<span style="color: #4f97d7;">{</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">p&#26159;VAR(p)&#65292;&#24847;&#24605;&#26159;t&#26102;&#21051;&#30340;&#25968;&#25454;&#19982;&#23427;&#21069;&#38754;p&#20010;&#26102;&#21051;&#25968;&#25454;&#26377;&#20851;</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>!<span style="color: #4f97d7; font-weight: bold;">is</span>.matrix<span style="color: #2d9574;">(</span>x<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span> 
+    x = <span style="color: #4f97d7; font-weight: bold;">as</span>.matrix<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)</span>
+  Tn = dim<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">]</span>    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">---&#26377;&#22810;&#23569;&#34892;</span>
+  k = dim<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>     <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">---&#26377;&#22810;&#23569;&#21015;&#65292;&#21015;&#25968;&#23601;&#26159;k&#34920;&#31034;k&#32500;&#25968;&#25454;</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &lt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span>        
+    p = <span style="color: #a45bad;">1</span>
+  idm = k * p
+  ne = Tn - p       <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#19968;&#20849;&#26377;ne&#20010;&#25968;&#25454;&#21487;&#20197;&#35745;&#31639;&#65288;&#39044;&#27979;&#65289;</span>
+  ist = p + <span style="color: #a45bad;">1</span>       <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#20174;ist&#20010;&#25968;&#25454;&#24320;&#22987;&#26159;&#21487;&#20197;&#39044;&#27979;&#30340;&#65292;&#22240;&#20026;ist&#21069;&#38754;&#27809;&#26377;p&#20010;&#25968;&#25454;</span>
+  y = x<span style="color: #bc6ec5;">[</span>ist:Tn, <span style="color: #bc6ec5;">]</span>
+  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#19979;&#38754;&#21040;27&#34892;&#65292;&#23558;&#20803;&#25968;&#25454;&#32452;&#32455;&#36215;&#26469;&#24471;&#21040;&#20070;&#19978;&#30340;X&#65292;&#27599;&#19968;&#34892;&#26159;[x(t),x(t-1)...x(t-p)]</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>include.mean<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    idm = idm + <span style="color: #a45bad;">1</span>
+    xmtx = cbind<span style="color: #2d9574;">(</span>rep<span style="color: #67b11d;">(</span><span style="color: #a45bad;">1</span>, ne<span style="color: #67b11d;">)</span>, x<span style="color: #67b11d;">[</span>p:<span style="color: #b1951d;">(</span>Tn - <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span>, <span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #bc6ec5;">{</span>
+    xmtx = x<span style="color: #2d9574;">[</span>p:<span style="color: #67b11d;">(</span>Tn - <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>, <span style="color: #2d9574;">]</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &gt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">2</span>:p<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      xmtx = cbind<span style="color: #67b11d;">(</span>xmtx, x<span style="color: #b1951d;">[</span><span style="color: #4f97d7;">(</span>ist - i<span style="color: #4f97d7;">)</span>:<span style="color: #4f97d7;">(</span>Tn - i<span style="color: #4f97d7;">)</span>, <span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>   <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#19968;&#20849;&#26159;p*k&#21015;</span>
+    <span style="color: #2d9574;">}</span>
+  <span style="color: #bc6ec5;">}</span>
+
+  ndim = ncol<span style="color: #bc6ec5;">(</span>xmtx<span style="color: #bc6ec5;">)</span>                        <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ndim&#34920;&#31034;xmtx&#26377;&#22810;&#23569;&#21015;</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>length<span style="color: #2d9574;">(</span>fixed<span style="color: #2d9574;">)</span> == <span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    paridx = matrix<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span>, ndim, k<span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #bc6ec5;">{</span>
+    paridx = fixed
+  <span style="color: #bc6ec5;">}</span>
+  res = NULL
+  beta = matrix<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">0</span>, ndim, k<span style="color: #bc6ec5;">)</span>
+  sdbeta = matrix<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">0</span>, ndim, k<span style="color: #bc6ec5;">)</span>
+  npar = <span style="color: #a45bad;">0</span>
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span>i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:k<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    idx = c<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span>:ndim<span style="color: #2d9574;">)[</span>paridx<span style="color: #67b11d;">[</span>, i<span style="color: #67b11d;">]</span> == <span style="color: #a45bad;">1</span><span style="color: #2d9574;">]</span>       <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#36820;&#22238;&#30340;&#26159;paridx&#20013;&#31532;i&#21015;&#20013;&#25968;&#23383;&#26159;1&#25968;&#25454;&#30340;&#34892;&#25983;</span>
+                                            <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">c(1:10)[c(11:20)&gt;15] &#30340;&#36820;&#22238;&#20540;&#26159;6 7 8 9 10</span>
+    resi = y<span style="color: #2d9574;">[</span>, i<span style="color: #2d9574;">]</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>length<span style="color: #67b11d;">(</span>idx<span style="color: #67b11d;">)</span> &gt; <span style="color: #a45bad;">0</span><span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      xm = <span style="color: #4f97d7; font-weight: bold;">as</span>.matrix<span style="color: #67b11d;">(</span>xmtx<span style="color: #b1951d;">[</span>, idx<span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>           <span style="color: #2aa1ae; background-color: #292e34;">### </span><span style="color: #2aa1ae; background-color: #292e34;">&#40664;&#35748;&#19979;xm&#23601;&#26159;xmtx</span>
+      npar = npar + dim<span style="color: #67b11d;">(</span>xm<span style="color: #67b11d;">)[</span><span style="color: #a45bad;">2</span><span style="color: #67b11d;">]</span>
+      xpx = t<span style="color: #67b11d;">(</span>xm<span style="color: #67b11d;">)</span> %*% xm                    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">xpx&#26159;&#19968;&#20010;(p*k) * (p*k)&#30697;&#38453;</span>
+      xpxinv = solve<span style="color: #67b11d;">(</span>xpx<span style="color: #67b11d;">)</span>                   <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#27714;&#30697;&#38453;&#30340;&#36870;</span>
+      xpy = t<span style="color: #67b11d;">(</span>xm<span style="color: #67b11d;">)</span> %*% <span style="color: #4f97d7; font-weight: bold;">as</span>.matrix<span style="color: #67b11d;">(</span>y<span style="color: #b1951d;">[</span>, i<span style="color: #b1951d;">]</span>, ne, <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>  <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">xpy&#26159;&#19968;&#20010;p*k * 1&#30697;&#38453;     &#12304;&#27880;&#12305;p*k&#26159;xmtx&#30340;&#21015;&#25968; = ndim</span>
+      betai = xpxinv %*% xpy                <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">betai= (t(xm) . xm)^(-1) . t(xm) . t(y[,i]) </span>
+      beta<span style="color: #67b11d;">[</span>idx, i<span style="color: #67b11d;">]</span> = betai                  <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">betai&#26159;&#19968;&#20010;p*k * 1</span>
+      resi = y<span style="color: #67b11d;">[</span>, i<span style="color: #67b11d;">]</span> - xm %*% betai          <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">resi ne*1</span>
+      <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">&#20197;&#19978;&#29992;&#21040;&#20844;&#24335;&#65306;P49&#23450;&#29702;2.2 vec(beta^) &#25152;&#20197;&#35828;&#19978;&#38754;&#26041;&#27861;&#29992;&#30340;&#26159;ML&#20272;&#35745; </span>
+      nee = dim<span style="color: #67b11d;">(</span>xm<span style="color: #67b11d;">)[</span><span style="color: #a45bad;">2</span><span style="color: #67b11d;">]</span>                      <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">nee = npar = ne</span>
+      sse = <span style="color: #4f97d7;">sum</span><span style="color: #67b11d;">(</span>resi * resi<span style="color: #67b11d;">)</span>/<span style="color: #67b11d;">(</span>Tn - p - nee<span style="color: #67b11d;">)</span> <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#19979;&#38754;&#20960;&#34892;&#19982;&#27169;&#22411;&#26816;&#39564;&#26377;&#20851;,&#36825;&#34892;&#25581;&#31034;&#27531;&#24046;&#21327;&#26041;&#24046;&#30697;&#38453;&#19982;&#27531;&#24046;&#65288;residual&#65289;&#20043;&#38388;&#30340;&#20851;&#31995;</span>
+      dd = diag<span style="color: #67b11d;">(</span>xpxinv<span style="color: #67b11d;">)</span>
+      sdbeta<span style="color: #67b11d;">[</span>idx, i<span style="color: #67b11d;">]</span> = sqrt<span style="color: #67b11d;">(</span>dd * sse<span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    res = cbind<span style="color: #2d9574;">(</span>res, resi<span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  sse = t<span style="color: #bc6ec5;">(</span>res<span style="color: #bc6ec5;">)</span> %*% res/<span style="color: #bc6ec5;">(</span>Tn - p<span style="color: #bc6ec5;">)</span>             <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#20844;&#24335; 2-55 &#27714;&#27531;&#24046;&#21327;&#26041;&#24046;&#30697;&#38453;</span>
+  aic = <span style="color: #a45bad;">0</span>
+  bic = <span style="color: #a45bad;">0</span>
+  hq = <span style="color: #a45bad;">0</span>
+  Phi = NULL
+  Ph0 = NULL
+  jst = <span style="color: #a45bad;">0</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>include.mean<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    Ph0 = beta<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span>, <span style="color: #2d9574;">]</span>
+    se = sdbeta<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span>, <span style="color: #2d9574;">]</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>output<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"Constant term:"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"Estimates: "</span>, Ph0, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"Std.Error: "</span>, se, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    jst = <span style="color: #a45bad;">1</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>include.mean<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:k<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">abs</span><span style="color: #b1951d;">(</span>Ph0<span style="color: #4f97d7;">[</span>i<span style="color: #4f97d7;">]</span><span style="color: #b1951d;">)</span> &gt; <span style="color: #a45bad;">1e</span>-<span style="color: #a45bad;">08</span><span style="color: #67b11d;">)</span> 
+        npar = npar - <span style="color: #a45bad;">1</span>
+    <span style="color: #2d9574;">}</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>output<span style="color: #bc6ec5;">)</span> 
+    cat<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"AR coefficient matrix"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span>i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:p<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    phi = t<span style="color: #2d9574;">(</span>beta<span style="color: #67b11d;">[</span><span style="color: #b1951d;">(</span>jst + <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span>:<span style="color: #b1951d;">(</span>jst + k<span style="color: #b1951d;">)</span>, <span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>
+    se = t<span style="color: #2d9574;">(</span>sdbeta<span style="color: #67b11d;">[</span><span style="color: #b1951d;">(</span>jst + <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span>:<span style="color: #b1951d;">(</span>jst + k<span style="color: #b1951d;">)</span>, <span style="color: #67b11d;">]</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>output<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"AR("</span>, i, <span style="color: #2d9574;">")-matrix"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #67b11d;">(</span>phi, digits = <span style="color: #a45bad;">3</span><span style="color: #67b11d;">)</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"standard error"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #67b11d;">(</span>se, digits = <span style="color: #a45bad;">3</span><span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    jst = jst + k
+    Phi = cbind<span style="color: #2d9574;">(</span>Phi, phi<span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>output<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">" "</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"Residuals cov-mtx:"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #2d9574;">(</span>sse<span style="color: #2d9574;">)</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">" "</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  dd = det<span style="color: #bc6ec5;">(</span>sse<span style="color: #bc6ec5;">)</span>
+  d1 = log<span style="color: #bc6ec5;">(</span>dd<span style="color: #bc6ec5;">)</span>
+  aic = d1 + <span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">2</span> * npar<span style="color: #bc6ec5;">)</span>/Tn
+  bic = d1 + log<span style="color: #bc6ec5;">(</span>Tn<span style="color: #bc6ec5;">)</span> * npar/Tn
+  hq = d1 + <span style="color: #a45bad;">2</span> * log<span style="color: #bc6ec5;">(</span>log<span style="color: #2d9574;">(</span>Tn<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span> * npar/Tn
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>output<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"det(SSE) = "</span>, dd, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"AIC = "</span>, aic, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"BIC = "</span>, bic, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"HQ  = "</span>, hq, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  VAR &lt;- <span style="color: #4f97d7;">list</span><span style="color: #bc6ec5;">(</span>data = x, cnst = include.mean, order = p, coef = beta, 
+              aic = aic, bic = bic, hq = hq, residuals = res, secoef = sdbeta, 
+              Sigma = sse, Phi = Phi, Ph0 = Ph0<span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">}</span>
+
+
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeaf19af" class="outline-3">
+<h3 id="orgeaf19af"><span class="section-number-3">1.2</span> VARpred 函数源码</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-python">function <span style="color: #4f97d7;">(</span>model, h = <span style="color: #a45bad;">1</span>, orig = <span style="color: #a45bad;">0</span>, Out.level = F<span style="color: #4f97d7;">)</span> 
+<span style="color: #4f97d7;">{</span>
+  x = model$data
+  Phi = model$Phi
+  sig = model$Sigma    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Sigma&#26159;&#19968;&#20010;&#27491;&#23450;&#21327;&#26041;&#24046;&#30697;&#38453;&#65292;&#21442;&#32771;&#23450;&#29702;2.2&#37324;&#38754;&#30340;&#23450;&#20041;</span>
+  Ph0 = model$Ph0  
+  p = model$order      <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">var(p)</span>
+  cnst = model$cnst    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">ture</span>
+  np = dim<span style="color: #bc6ec5;">(</span>Phi<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
+  k = dim<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
+  nT = dim<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">]</span>
+  k = dim<span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>orig &lt;= <span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">)</span> 
+    orig = nT
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>orig &gt; nT<span style="color: #bc6ec5;">)</span> 
+    orig = nT
+  psi = VARpsi<span style="color: #bc6ec5;">(</span>Phi, h<span style="color: #bc6ec5;">)</span>$psi 
+  beta = t<span style="color: #bc6ec5;">(</span>Phi<span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>length<span style="color: #2d9574;">(</span>Ph0<span style="color: #2d9574;">)</span> &lt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span> 
+    Ph0 = rep<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">0</span>, k<span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &gt; orig<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"Too few data points to produce forecasts"</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  pred = NULL
+  se = NULL
+  MSE = NULL
+  mse = NULL
+  px = <span style="color: #4f97d7; font-weight: bold;">as</span>.matrix<span style="color: #bc6ec5;">(</span>x<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span>:orig, <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">)</span>  <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">orig&#29992;&#20110;&#25968;&#25454;&#20998;&#21106;&#65292;&#21482;&#26159;&#21462;&#21069;orig&#34892;&#12290;</span>
+  Past = px<span style="color: #bc6ec5;">[</span>orig, <span style="color: #bc6ec5;">]</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &gt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>j <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:<span style="color: #67b11d;">(</span>p - <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      Past = c<span style="color: #67b11d;">(</span>Past, px<span style="color: #b1951d;">[</span><span style="color: #4f97d7;">(</span>orig - j<span style="color: #4f97d7;">)</span>, <span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>   <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">past&#26159;px&#30340;&#21518;p&#34892;&#23637;&#24320;&#25104;&#19968;&#32500;&#21521;&#37327; &#21363;(px[-1],px[-2],...,px[-p])</span>
+    <span style="color: #2d9574;">}</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">---&#30475;chapter.R&#19978;&#26377;&#36755;&#20986;&#21644;&#19968;&#20123;&#35299;&#37322;</span>
+  cat<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"orig "</span>, orig, <span style="color: #2d9574;">"\n"</span><span style="color: #bc6ec5;">)</span>
+  ne = orig - p
+  xmtx = NULL
+  P = NULL
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>cnst<span style="color: #bc6ec5;">)</span> 
+    xmtx = rep<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">1</span>, ne<span style="color: #bc6ec5;">)</span>
+  xmtx = cbind<span style="color: #bc6ec5;">(</span>xmtx, x<span style="color: #2d9574;">[</span>p:<span style="color: #67b11d;">(</span>orig - <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>, <span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">)</span>
+  ist = p + <span style="color: #a45bad;">1</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &gt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>j <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">2</span>:p<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      xmtx = cbind<span style="color: #67b11d;">(</span>xmtx, x<span style="color: #b1951d;">[</span><span style="color: #4f97d7;">(</span>ist - j<span style="color: #4f97d7;">)</span>:<span style="color: #4f97d7;">(</span>orig - j<span style="color: #4f97d7;">)</span>, <span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+  <span style="color: #bc6ec5;">}</span>
+  xmtx = <span style="color: #4f97d7; font-weight: bold;">as</span>.matrix<span style="color: #bc6ec5;">(</span>xmtx<span style="color: #bc6ec5;">)</span>
+  G = t<span style="color: #bc6ec5;">(</span>xmtx<span style="color: #bc6ec5;">)</span> %*% xmtx/ne
+  Ginv = solve<span style="color: #bc6ec5;">(</span>G<span style="color: #bc6ec5;">)</span>
+  P = Phi
+  vv = Ph0
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>p &gt; <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    II = diag<span style="color: #2d9574;">(</span>rep<span style="color: #67b11d;">(</span><span style="color: #a45bad;">1</span>, k * <span style="color: #b1951d;">(</span>p - <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    II = cbind<span style="color: #2d9574;">(</span>II, matrix<span style="color: #67b11d;">(</span><span style="color: #a45bad;">0</span>, <span style="color: #b1951d;">(</span>p - <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> * k, k<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    P = rbind<span style="color: #2d9574;">(</span>P, II<span style="color: #2d9574;">)</span>
+    vv = c<span style="color: #2d9574;">(</span>vv, rep<span style="color: #67b11d;">(</span><span style="color: #a45bad;">0</span>, <span style="color: #b1951d;">(</span>p - <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span> * k<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>cnst<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    c1 = c<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span>, rep<span style="color: #67b11d;">(</span><span style="color: #a45bad;">0</span>, np<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    P = cbind<span style="color: #2d9574;">(</span>vv, P<span style="color: #2d9574;">)</span>
+    P = rbind<span style="color: #2d9574;">(</span>c1, P<span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  Sig = sig
+  n1 = dim<span style="color: #bc6ec5;">(</span>P<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
+  MSE = <span style="color: #bc6ec5;">(</span>n1/orig<span style="color: #bc6ec5;">)</span> * sig
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span>j <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:h<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    tmp = Ph0 + matrix<span style="color: #2d9574;">(</span>Past, <span style="color: #a45bad;">1</span>, np<span style="color: #2d9574;">)</span> %*% beta       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">beta = t(Phi)</span>
+                                                   <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">tmp &#23601;&#26159;&#39044;&#27979;h&#20010;&#20540;,&#22914;&#19979;&#38754;&#30340;&#27880;&#37322;&#65292;&#20063;&#23601;&#26159;&#35828;&#36825;&#20989;&#25968;&#23601;&#39044;&#27979;&#20102;h&#20010;&#20540;</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">QUESTION: &#20026;&#20160;&#20040;&#36825;&#37324;&#27809;&#26377;&#21152;a&#36825;&#20010;&#21521;&#37327;&#65311;&#65311; --&gt;&#22240;&#20026;&#36825;&#26159;&#20272;&#35745;&#27169;&#22411;&#30340;&#39044;&#27979;</span>
+    px = rbind<span style="color: #2d9574;">(</span>px, tmp<span style="color: #2d9574;">)</span>
+    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">------------------&#39044;&#27979;&#37096;&#20998;&#21040;&#36825;&#32467;&#26463;&#65292;&#24448;&#19979;&#26159;&#39044;&#27979;&#32467;&#26524;&#30340;&#35780;&#20215;--------------------</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>np &gt; k<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      Past = c<span style="color: #67b11d;">(</span>tmp, Past<span style="color: #b1951d;">[</span><span style="color: #a45bad;">1</span>:<span style="color: #4f97d7;">(</span>np - k<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span> <span style="color: #2d9574;">{</span>
+      Past = tmp
+    <span style="color: #2d9574;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>j &gt; <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      idx = <span style="color: #67b11d;">(</span>j - <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span> * k
+      wk = psi<span style="color: #67b11d;">[</span>, <span style="color: #b1951d;">(</span>idx + <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span>:<span style="color: #b1951d;">(</span>idx + k<span style="color: #b1951d;">)</span><span style="color: #67b11d;">]</span>
+      Sig = Sig + wk %*% sig %*% t<span style="color: #67b11d;">(</span>wk<span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>j &gt; <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #67b11d;">(</span>ii <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">0</span>:<span style="color: #b1951d;">(</span>j - <span style="color: #a45bad;">1</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span> <span style="color: #67b11d;">{</span>
+        psii = diag<span style="color: #b1951d;">(</span>rep<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>, k<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #b1951d;">(</span>ii &gt; <span style="color: #a45bad;">0</span><span style="color: #b1951d;">)</span> <span style="color: #b1951d;">{</span>
+          idx = ii * k
+          psii = psi<span style="color: #4f97d7;">[</span>, <span style="color: #bc6ec5;">(</span>idx + <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span>:<span style="color: #bc6ec5;">(</span>idx + k<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">]</span>
+        <span style="color: #b1951d;">}</span>
+        P1 = P^<span style="color: #b1951d;">(</span>j - <span style="color: #a45bad;">1</span> - ii<span style="color: #b1951d;">)</span> %*% Ginv
+        <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #b1951d;">(</span>jj <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">0</span>:<span style="color: #4f97d7;">(</span>j - <span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span> <span style="color: #b1951d;">{</span>
+          psij = diag<span style="color: #4f97d7;">(</span>rep<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">1</span>, k<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+          <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">(</span>jj &gt; <span style="color: #a45bad;">0</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">{</span>
+            jdx = jj * k
+            psij = psi<span style="color: #bc6ec5;">[</span>, <span style="color: #2d9574;">(</span>jdx + <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>:<span style="color: #2d9574;">(</span>jdx + k<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">]</span>
+          <span style="color: #4f97d7;">}</span>
+          P2 = P^<span style="color: #4f97d7;">(</span>j - <span style="color: #a45bad;">1</span> - jj<span style="color: #4f97d7;">)</span> %*% G
+          k1 = <span style="color: #4f97d7;">sum</span><span style="color: #4f97d7;">(</span>diag<span style="color: #bc6ec5;">(</span>P1 %*% P2<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+          MSE = <span style="color: #4f97d7;">(</span>k1/orig<span style="color: #4f97d7;">)</span> * psii %*% sig %*% t<span style="color: #4f97d7;">(</span>psij<span style="color: #4f97d7;">)</span>
+        <span style="color: #b1951d;">}</span>
+      <span style="color: #67b11d;">}</span>
+    <span style="color: #2d9574;">}</span>
+    se = rbind<span style="color: #2d9574;">(</span>se, sqrt<span style="color: #67b11d;">(</span>diag<span style="color: #b1951d;">(</span>Sig<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>Out.level<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"Covariance matrix of forecast errors at horizon: "</span>, 
+          j, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #67b11d;">(</span>Sig<span style="color: #67b11d;">)</span>
+      cat<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"Omega matrix at horizon: "</span>, j, <span style="color: #2d9574;">"\n"</span><span style="color: #67b11d;">)</span>
+      <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #67b11d;">(</span>MSE<span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    MSE = MSE + Sig
+    mse = rbind<span style="color: #2d9574;">(</span>mse, sqrt<span style="color: #67b11d;">(</span>diag<span style="color: #b1951d;">(</span>MSE<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  cat<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"Forecasts at origin: "</span>, orig, <span style="color: #2d9574;">"\n"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #bc6ec5;">(</span>px<span style="color: #2d9574;">[</span><span style="color: #67b11d;">(</span>orig + <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>:<span style="color: #67b11d;">(</span>orig + h<span style="color: #67b11d;">)</span>, <span style="color: #2d9574;">]</span>, digits = <span style="color: #a45bad;">4</span><span style="color: #bc6ec5;">)</span>
+  cat<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"Standard Errors of predictions: "</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #bc6ec5;">(</span>se<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span>:h, <span style="color: #2d9574;">]</span>, digits = <span style="color: #a45bad;">4</span><span style="color: #bc6ec5;">)</span>
+  pred = px<span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">(</span>orig + <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>:<span style="color: #2d9574;">(</span>orig + h<span style="color: #2d9574;">)</span>, <span style="color: #bc6ec5;">]</span>
+  cat<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"Root mean square errors of predictions: "</span>, <span style="color: #2d9574;">"\n"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #bc6ec5;">(</span>mse<span style="color: #2d9574;">[</span><span style="color: #a45bad;">1</span>:h, <span style="color: #2d9574;">]</span>, digits = <span style="color: #a45bad;">4</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #bc6ec5;">(</span>orig &lt; nT<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    cat<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"Observations, predicted values,     errors, and MSE"</span>, 
+        <span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>
+    tmp = NULL
+    jend = <span style="color: #4f97d7;">min</span><span style="color: #2d9574;">(</span>nT, <span style="color: #67b11d;">(</span>orig + h<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>t <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #67b11d;">(</span>orig + <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>:jend<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      case = c<span style="color: #67b11d;">(</span>t, x<span style="color: #b1951d;">[</span>t, <span style="color: #b1951d;">]</span>, px<span style="color: #b1951d;">[</span>t, <span style="color: #b1951d;">]</span>, x<span style="color: #b1951d;">[</span>t, <span style="color: #b1951d;">]</span> - px<span style="color: #b1951d;">[</span>t, <span style="color: #b1951d;">]</span><span style="color: #67b11d;">)</span>
+      tmp = rbind<span style="color: #67b11d;">(</span>tmp, case<span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    colnames<span style="color: #2d9574;">(</span>tmp<span style="color: #2d9574;">)</span> &lt;- c<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"time"</span>, rep<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"obs"</span>, k<span style="color: #67b11d;">)</span>, rep<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"fcst"</span>, 
+                                                  k<span style="color: #67b11d;">)</span>, rep<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"err"</span>, k<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    idx = c<span style="color: #2d9574;">(</span><span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span>j <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #a45bad;">1</span>:k<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+      idx = c<span style="color: #67b11d;">(</span>idx, c<span style="color: #b1951d;">(</span><span style="color: #a45bad;">0</span>, <span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span><span style="color: #b1951d;">)</span> * k + j + <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>
+    <span style="color: #2d9574;">}</span>
+    tmp = tmp<span style="color: #2d9574;">[</span>, idx<span style="color: #2d9574;">]</span>
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #2d9574;">(</span><span style="color: #4f97d7;">round</span><span style="color: #67b11d;">(</span>tmp, <span style="color: #a45bad;">4</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+  <span style="color: #bc6ec5;">}</span>
+  VARpred &lt;- <span style="color: #4f97d7;">list</span><span style="color: #bc6ec5;">(</span>pred = pred, se.err = se, mse = mse<span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">}</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org702700d" class="outline-3">
+<h3 id="org702700d"><span class="section-number-3">1.3</span> VMA函数</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+VMA模型主要用到了书上的P85页 3.7 下面的函数。也用到了3.7上面的一列，我们要估计的是θ （维度是1*k）。
+</p>
+
+<p>
+要最小化的最大似然函数和nlminb函数定义是这样的：
+</p>
+
+<p>
+LLKvma &lt;- function(par, zt = zt, q = q, fixed = fix1, include.mean = include.mean) 
+</p>
+
+<p>
+fit = nlminb(start = ParMA, objective = LLKvma, zt = da, 
+                 fixed = fixed, include.mean = include.mean, q = q, 
+                 lower = lowerBounds, upper = upperBounds, control = list(trace = 3))
+</p>
+
+<p>
+<b>参数</b> ：start是我们给定的估计参数的初始值，objective是最大使然函数里的那个我们要最小化他的返回值的那个函数，zt是实际数据da，q是VMA(q)中的那个q。
+</p>
+
+<p>
+其中，par是我们要估计的参数，即μ和θ<sub>i,一共是</sub>(kq+1)*k个变量（μ是1*k，θ<sub>i是1</sub>*k,一共q个θ）。
+-sum(log(dmvonorm(at,rep(0,k),sig)) == 书中的Σlog(P(a<sub>t</sub>|θ1，Σa)) 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga952be0" class="outline-2">
+<h2 id="orga952be0"><span class="section-number-2">2</span> 概念知识</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgfb11e7e" class="outline-3">
+<h3 id="orgfb11e7e"><span class="section-number-3">2.1</span> 弱平稳</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+弱平稳就是说Zt的均值和协方差矩阵不依赖于时间t，即zt的前两阶矩不随时间变化。（一个隐函条件是这两个统计变量都是存在的）
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6eb4511" class="outline-3">
+<h3 id="org6eb4511"><span class="section-number-3">2.2</span> 线性</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+z<sub>t</sub> = μ + Σ<sub>(0-)</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org39cec52" class="outline-3">
+<h3 id="org39cec52"><span class="section-number-3">2.3</span> 交叉相关矩阵</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>滞后为l的 <b>交叉协方差矩阵</b> ：τ<sub>l</sub>=Cov(z<sub>t,z</sub><sub>(t-l)</sub>)</li>
+<li>滞后为l的 <b>交叉相关矩阵</b> :CCMρ<sub>l</sub> = D<sup>-1</sup> τ<sub>1</sub> D<sup>-1</sup></li>
+</ul>
+
+<p>
+这两个变量的估计方值在1.4有介绍
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9016c14" class="outline-3">
+<h3 id="org9016c14"><span class="section-number-3">2.4</span> 多元混成检验</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Ljung-Box检验统计量Q<sub>k</sub>(m)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org131b0a9" class="outline-3">
+<h3 id="org131b0a9"><span class="section-number-3">2.5</span> 自回归模型（AR）、移动平均模型（MA）、自回归移动平均模型（ARMA）以及差分自回归移动平均模型（ARIMA）辨析</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li><a href="http://lidequan12345.blog.163.com/blog/static/28985036201321074325444/">这个博客</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org20a48ac" class="outline-3">
+<h3 id="org20a48ac"><span class="section-number-3">2.6</span> 不存在封闭解</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+是指有解但是我们就是就是求不出来，可以利用数值方法估计一下。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc334e32" class="outline-3">
+<h3 id="orgc334e32"><span class="section-number-3">2.7</span> 残差</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+残差在数理统计中是指实际观察值与估计值（拟合值）之间的差。“残差”蕴含了有关模型基本假设的重要信息。
+</p>
+
+<p>
+如果回归模型正确的话， 我们可以将残差看作误差的观测值。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab8916a" class="outline-2">
+<h2 id="orgab8916a"><span class="section-number-2">3</span> R语言函数的一些注释</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgefa1f44" class="outline-3">
+<h3 id="orgefa1f44"><span class="section-number-3">3.1</span> diff(x,lag,differences)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+diff是返回滞后的迭代差异。
+</p>
+
+<p>
+意思就是dif(1:10,2)的话就是所有数减去他的前2个数的值，所以是（2,2,2,2,2,2,2,2）一共8个数，因为1和2没有滞后2个的数
+同理diff(1:10,6) = (6,6,6,6)
+</p>
+
+<p>
+参数：
+</p>
+<ul class="org-ul">
+<li>x： 数据</li>
+<li>lag：滞后的步数</li>
+<li>differences：没用到所以暂时不研究</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb5448a8" class="outline-3">
+<h3 id="orgb5448a8"><span class="section-number-3">3.2</span> rmvnorm</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+rmvnorm函数生成一个正态分布的数据，其中300是向量矩阵，rep(0.2)=(0,0),表示两列向量的均值都是0，di
+</p>
+</div>
+</div>
+<div id="outline-container-org747a3f2" class="outline-3">
+<h3 id="org747a3f2"><span class="section-number-3">3.3</span> Mod(V)</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+复数的函数，如果V1 = x + yi ，那么Mod(V1) = sqrt(x<sup>2</sup> + y<sup>2</sup>) .即求负数V1的模
+</p>
+</div>
+</div>
+<div id="outline-container-orgb208366" class="outline-3">
+<h3 id="orgb208366"><span class="section-number-3">3.4</span> solve(A,B)</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+这个函数是求解 Ax=B的x，即 x = B%*%A<sup>-1</sup>。
+</p>
+
+<p>
+如果只是solve(A)的话，那么就是求A矩阵的逆
+</p>
+</div>
+</div>
+<div id="outline-container-orgb724d88" class="outline-3">
+<h3 id="orgb724d88"><span class="section-number-3">3.5</span> nlminb 函数</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+可以用来计算极大似然函数
+<a href="https://cosx.org/2009/07/maximum-likelihood-estimation-in-r/">参考网址</a>  上是使用实例讲的很清楚
+</p>
+</div>
+</div>
+<div id="outline-container-org27ee954" class="outline-3">
+<h3 id="org27ee954"><span class="section-number-3">3.6</span> dnorm(x,mean,sd)</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+生成的是在N(mean,sd)的正态分布中取x的概率，如果x是个向量的话那么就是每个数的概率，
+</p>
+
+<p>
+反正length(x) = length(dnorm(x,mean,sd))
+</p>
+
+<p>
+<span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline">_</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org473d1cd" class="outline-2">
+<h2 id="org473d1cd"><span class="section-number-2">4</span> QUESTIONS</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li><p>
+方程的phi是怎么确定的？？在例子程序中，都是直接给出来的。那么在实际中呢？？？
+</p>
+
+<p>
+解：是估计出来的，在模型估计中有公式
+</p></li>
+<li><p>
+VAR模型中的Sigmaa是什么用途的？？
+</p>
+
+<p>
+解：Sigma是残差协方差矩阵，是用来进行模型估计的。在VAR(p)模型的估计过程，主要估计的就是Phi和Sigma。
+</p></li>
+<li>include.mean 的意义是什么？？</li>
+<li><p>
+在varpred函数里面预测时候并没有加a这个向量？
+</p>
+
+<p>
+解：在P2.9.2 估计模型的预测中，可以看到估计模型的预测是不需要加最后的a向量的。只是这样： z<sub>h</sub> = φ0 + Σφ<sub>i</sub> z<sub>h</sub>(l-i)
+    就可以了
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8970b63" class="outline-2">
+<h2 id="org8970b63"><span class="section-number-2">5</span> 改成C语言的可能障碍</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgb952de5" class="outline-3">
+<h3 id="orgb952de5"><span class="section-number-3">5.1</span> <span class="done DONE">DONE</span> eigen函数 是矩阵的谱分解函数，不知道C语言里面有没有相应的函数来解决矩阵的谱分解</h3>
+</div>
+<div id="outline-container-org7590795" class="outline-3">
+<h3 id="org7590795"><span class="section-number-3">5.2</span> <span class="done DONE">DONE</span> solve函数来求矩阵的逆</h3>
+</div>
+<div id="outline-container-orgc21f0e9" class="outline-3">
+<h3 id="orgc21f0e9"><span class="section-number-3">5.3</span> <span class="todo TODO">TODO</span> 还有一个nlminb函数是一个优化函数，不知道具体是怎么实现的。可能还需要在深入看这个函数的源代码</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+nlminb(start, objective, gradient = NULL, hessian = NULL, &#x2026;,
+       scale = 1, control = list(), lower = -Inf, upper = Inf)
+</p>
+
+<p>
+一些参数：
+</p>
+<ul class="org-ul">
+<li>objective                   &lt;-看这个参数的解释是这个方法是要最小化一个方法？？	
+Function to be minimized（要最小化的方法）. Must return a scalar value. The first argument to objective 
+is the vector of parameters to be optimized, whose initial values are supplied through start.
+Further arguments (fixed during the course of the optimization) to objective may be specified as well
+(see &#x2026;).</li>
+<li>start</li>
+</ul>
+<p>
+numeric vector, initial values for the parameters to be optimized.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfab8b0c" class="outline-2">
+<h2 id="orgfab8b0c"><span class="section-number-2">6</span> 一些函数的c语言版本：</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-org0d108e4" class="outline-3">
+<h3 id="org0d108e4"><span class="section-number-3">6.1</span> eigen函数</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+<pre class="src src-nillangnilswitchesnilflags">nilbody
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org68f71a1" class="outline-3">
+<h3 id="org68f71a1"><span class="section-number-3">6.2</span> 矩阵求逆</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+<pre class="src src-c"><span class="linenr">  1: </span><span style="color: #bc6ec5;">#include</span><span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>  
+<span class="linenr">  2: </span><span style="color: #bc6ec5;">#define</span> <span style="color: #7590db;">N</span> <span style="color: #a45bad;">10</span>  
+<span class="linenr">  3: </span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">getA</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">arcs</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span><span style="color: #4f97d7;">)</span><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">&#25353;&#31532;&#19968;&#34892;&#23637;&#24320;&#35745;&#31639;|A|  </span>
+<span class="linenr">  4: </span><span style="color: #4f97d7;">{</span>  
+<span class="linenr">  5: </span>    <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #bc6ec5;">(</span>n==<span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span>  
+<span class="linenr">  6: </span>    <span style="color: #bc6ec5;">{</span>  
+<span class="linenr">  7: </span>        <span style="color: #4f97d7; font-weight: bold;">return</span> arcs<span style="color: #2d9574;">[</span><span style="color: #a45bad;">0</span><span style="color: #2d9574;">][</span><span style="color: #a45bad;">0</span><span style="color: #2d9574;">]</span>;  
+<span class="linenr">  8: </span>    <span style="color: #bc6ec5;">}</span>  
+<span class="linenr">  9: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ans</span> = <span style="color: #a45bad;">0</span>;  
+<span class="linenr"> 10: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">temp</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>;  
+<span class="linenr"> 11: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>,<span style="color: #7590db;">j</span>,<span style="color: #7590db;">k</span>;  
+<span class="linenr"> 12: </span>    <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #bc6ec5;">(</span>i=<span style="color: #a45bad;">0</span>;i&lt;n;i++<span style="color: #bc6ec5;">)</span>  
+<span class="linenr"> 13: </span>    <span style="color: #bc6ec5;">{</span>  
+<span class="linenr"> 14: </span>        <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #2d9574;">(</span>j=<span style="color: #a45bad;">0</span>;j&lt;n-<span style="color: #a45bad;">1</span>;j++<span style="color: #2d9574;">)</span>  
+<span class="linenr"> 15: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 16: </span>            <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #67b11d;">(</span>k=<span style="color: #a45bad;">0</span>;k&lt;n-<span style="color: #a45bad;">1</span>;k++<span style="color: #67b11d;">)</span>  
+<span class="linenr"> 17: </span>            <span style="color: #67b11d;">{</span>  
+<span class="linenr"> 18: </span>                temp<span style="color: #b1951d;">[</span>j<span style="color: #b1951d;">][</span>k<span style="color: #b1951d;">]</span> = arcs<span style="color: #b1951d;">[</span>j+<span style="color: #a45bad;">1</span><span style="color: #b1951d;">][</span><span style="color: #4f97d7;">(</span>k&gt;=i<span style="color: #4f97d7;">)</span>?k+<span style="color: #a45bad;">1</span>:k<span style="color: #b1951d;">]</span>;  
+<span class="linenr"> 19: </span>
+<span class="linenr"> 20: </span>            <span style="color: #67b11d;">}</span>  
+<span class="linenr"> 21: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 22: </span>        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">t</span> = getA<span style="color: #2d9574;">(</span>temp,n-<span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span>;  
+<span class="linenr"> 23: </span>        <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #2d9574;">(</span>i%<span style="color: #a45bad;">2</span>==<span style="color: #a45bad;">0</span><span style="color: #2d9574;">)</span>  
+<span class="linenr"> 24: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 25: </span>            ans += arcs<span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">][</span>i<span style="color: #67b11d;">]</span>*t;  
+<span class="linenr"> 26: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 27: </span>        <span style="color: #4f97d7; font-weight: bold;">else</span>  
+<span class="linenr"> 28: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 29: </span>            ans -=  arcs<span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">][</span>i<span style="color: #67b11d;">]</span>*t;  
+<span class="linenr"> 30: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 31: </span>    <span style="color: #bc6ec5;">}</span>  
+<span class="linenr"> 32: </span>    <span style="color: #4f97d7; font-weight: bold;">return</span> ans;  
+<span class="linenr"> 33: </span><span style="color: #4f97d7;">}</span>  
+<span class="linenr"> 34: </span><span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">getAStart</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">arcs</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>,<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">ans</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">&#35745;&#31639;&#27599;&#19968;&#34892;&#27599;&#19968;&#21015;&#30340;&#27599;&#20010;&#20803;&#32032;&#25152;&#23545;&#24212;&#30340;&#20313;&#23376;&#24335;&#65292;&#32452;&#25104;A*  </span>
+<span class="linenr"> 35: </span><span style="color: #4f97d7;">{</span>  
+<span class="linenr"> 36: </span>    <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #bc6ec5;">(</span>n==<span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span>  
+<span class="linenr"> 37: </span>    <span style="color: #bc6ec5;">{</span>  
+<span class="linenr"> 38: </span>        ans<span style="color: #2d9574;">[</span><span style="color: #a45bad;">0</span><span style="color: #2d9574;">][</span><span style="color: #a45bad;">0</span><span style="color: #2d9574;">]</span> = <span style="color: #a45bad;">1</span>;  
+<span class="linenr"> 39: </span>        <span style="color: #4f97d7; font-weight: bold;">return</span>;  
+<span class="linenr"> 40: </span>    <span style="color: #bc6ec5;">}</span>  
+<span class="linenr"> 41: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>,<span style="color: #7590db;">j</span>,<span style="color: #7590db;">k</span>,<span style="color: #7590db;">t</span>;  
+<span class="linenr"> 42: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">temp</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>;  
+<span class="linenr"> 43: </span>    <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #bc6ec5;">(</span>i=<span style="color: #a45bad;">0</span>;i&lt;n;i++<span style="color: #bc6ec5;">)</span>  
+<span class="linenr"> 44: </span>    <span style="color: #bc6ec5;">{</span>  
+<span class="linenr"> 45: </span>        <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #2d9574;">(</span>j=<span style="color: #a45bad;">0</span>;j&lt;n;j++<span style="color: #2d9574;">)</span>  
+<span class="linenr"> 46: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 47: </span>            <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #67b11d;">(</span>k=<span style="color: #a45bad;">0</span>;k&lt;n-<span style="color: #a45bad;">1</span>;k++<span style="color: #67b11d;">)</span>  
+<span class="linenr"> 48: </span>            <span style="color: #67b11d;">{</span>  
+<span class="linenr"> 49: </span>                <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #b1951d;">(</span>t=<span style="color: #a45bad;">0</span>;t&lt;n-<span style="color: #a45bad;">1</span>;t++<span style="color: #b1951d;">)</span>  
+<span class="linenr"> 50: </span>                <span style="color: #b1951d;">{</span>  
+<span class="linenr"> 51: </span>                    temp<span style="color: #4f97d7;">[</span>k<span style="color: #4f97d7;">][</span>t<span style="color: #4f97d7;">]</span> = arcs<span style="color: #4f97d7;">[</span>k&gt;=i?k+<span style="color: #a45bad;">1</span>:k<span style="color: #4f97d7;">][</span>t&gt;=j?t+<span style="color: #a45bad;">1</span>:t<span style="color: #4f97d7;">]</span>;  
+<span class="linenr"> 52: </span>                <span style="color: #b1951d;">}</span>  
+<span class="linenr"> 53: </span>            <span style="color: #67b11d;">}</span>  
+<span class="linenr"> 54: </span>
+<span class="linenr"> 55: </span>
+<span class="linenr"> 56: </span>            ans<span style="color: #67b11d;">[</span>j<span style="color: #67b11d;">][</span>i<span style="color: #67b11d;">]</span>  =  getA<span style="color: #67b11d;">(</span>temp,n-<span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>;  
+<span class="linenr"> 57: </span>            <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>i+j<span style="color: #b1951d;">)</span>%<span style="color: #a45bad;">2</span> == <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>  
+<span class="linenr"> 58: </span>            <span style="color: #67b11d;">{</span>  
+<span class="linenr"> 59: </span>                ans<span style="color: #b1951d;">[</span>j<span style="color: #b1951d;">][</span>i<span style="color: #b1951d;">]</span> = - ans<span style="color: #b1951d;">[</span>j<span style="color: #b1951d;">][</span>i<span style="color: #b1951d;">]</span>;  
+<span class="linenr"> 60: </span>            <span style="color: #67b11d;">}</span>  
+<span class="linenr"> 61: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 62: </span>    <span style="color: #bc6ec5;">}</span>  
+<span class="linenr"> 63: </span><span style="color: #4f97d7;">}</span>  
+<span class="linenr"> 64: </span>
+<span class="linenr"> 65: </span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">()</span>  
+<span class="linenr"> 66: </span><span style="color: #4f97d7;">{</span>  
+<span class="linenr"> 67: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">arcs</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>;  
+<span class="linenr"> 68: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">astar</span><span style="color: #bc6ec5;">[</span>N<span style="color: #bc6ec5;">][</span>N<span style="color: #bc6ec5;">]</span>;  
+<span class="linenr"> 69: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>,<span style="color: #7590db;">j</span>;  
+<span class="linenr"> 70: </span>    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span>;  
+<span class="linenr"> 71: </span>    <span style="color: #4f97d7; font-weight: bold;">while</span><span style="color: #bc6ec5;">(</span>scanf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"%d"</span>,&amp;n<span style="color: #2d9574;">)</span>!=EOF &amp;&amp; n<span style="color: #bc6ec5;">)</span>  
+<span class="linenr"> 72: </span>    <span style="color: #bc6ec5;">{</span>  
+<span class="linenr"> 73: </span>        <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #2d9574;">(</span>i=<span style="color: #a45bad;">0</span>;i&lt;n;i++<span style="color: #2d9574;">)</span>  
+<span class="linenr"> 74: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 75: </span>            <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #67b11d;">(</span>j=<span style="color: #a45bad;">0</span>;j&lt;n;j++<span style="color: #67b11d;">)</span>  
+<span class="linenr"> 76: </span>            <span style="color: #67b11d;">{</span>  
+<span class="linenr"> 77: </span>                scanf<span style="color: #b1951d;">(</span><span style="color: #2d9574;">"%d"</span>,&amp;arcs<span style="color: #4f97d7;">[</span>i<span style="color: #4f97d7;">][</span>j<span style="color: #4f97d7;">]</span><span style="color: #b1951d;">)</span>;  
+<span class="linenr"> 78: </span>            <span style="color: #67b11d;">}</span>  
+<span class="linenr"> 79: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 80: </span>
+<span class="linenr"> 81: </span>        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">a</span> = getA<span style="color: #2d9574;">(</span>arcs,n<span style="color: #2d9574;">)</span>;  
+<span class="linenr"> 82: </span>        <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #2d9574;">(</span>a==<span style="color: #a45bad;">0</span><span style="color: #2d9574;">)</span>  
+<span class="linenr"> 83: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 84: </span>            printf<span style="color: #67b11d;">(</span><span style="color: #2d9574;">"can not transform!\n"</span><span style="color: #67b11d;">)</span>;  
+<span class="linenr"> 85: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 86: </span>        <span style="color: #4f97d7; font-weight: bold;">else</span>  
+<span class="linenr"> 87: </span>        <span style="color: #2d9574;">{</span>  
+<span class="linenr"> 88: </span>            getAStart<span style="color: #67b11d;">(</span>arcs,n,astar<span style="color: #67b11d;">)</span>;  
+<span class="linenr"> 89: </span>            <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #67b11d;">(</span>i=<span style="color: #a45bad;">0</span>;i&lt;n;i++<span style="color: #67b11d;">)</span>  
+<span class="linenr"> 90: </span>            <span style="color: #67b11d;">{</span>  
+<span class="linenr"> 91: </span>                <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #b1951d;">(</span>j=<span style="color: #a45bad;">0</span>;j&lt;n;j++<span style="color: #b1951d;">)</span>  
+<span class="linenr"> 92: </span>                <span style="color: #b1951d;">{</span>  
+<span class="linenr"> 93: </span>                    printf<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"%.3lf "</span>,<span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">double</span><span style="color: #bc6ec5;">)</span>astar<span style="color: #bc6ec5;">[</span>i<span style="color: #bc6ec5;">][</span>j<span style="color: #bc6ec5;">]</span>/a<span style="color: #4f97d7;">)</span>;  
+<span class="linenr"> 94: </span>                <span style="color: #b1951d;">}</span>  
+<span class="linenr"> 95: </span>                printf<span style="color: #b1951d;">(</span><span style="color: #2d9574;">"\n"</span><span style="color: #b1951d;">)</span>;  
+<span class="linenr"> 96: </span>            <span style="color: #67b11d;">}</span>  
+<span class="linenr"> 97: </span>        <span style="color: #2d9574;">}</span>  
+<span class="linenr"> 98: </span>        printf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"\n"</span><span style="color: #2d9574;">)</span>;  
+<span class="linenr"> 99: </span>
+<span class="linenr">100: </span>    <span style="color: #bc6ec5;">}</span>  
+<span class="linenr">101: </span>
+<span class="linenr">102: </span>
+<span class="linenr">103: </span>    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;  
+<span class="linenr">104: </span><span style="color: #4f97d7;">}</span>  
+<span class="linenr">105: </span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org1a1a49a" class="outline-2">
+<h2 id="org1a1a49a"><span class="section-number-2">7</span> 随想</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+  多元时间序列有多个时间序列，之所以要使用多元原因是因为可能两只股票之间存在一定的联系，最简单的我们可以想到的是z<sub>1t受z</sub><sub>2</sub>(t-1) 和z<sub>1</sub>(t-1),也就是z1和z2前面数值的影响，受其影响的大小体现在参数φ里面，在估计过程中
+我们就能将相关性大的参数估计的数大而相关性小的估计的参数小。像P21页解释的那样，要是φ1,21 ！= 0 的话说明z<sub>2t</sub> 依赖于z<sub>1t的过去值</sub>。这样多元时间序列的关系就体现出来了。
+</p>
+
+<p>
+另外一个比较简单的模型是VMA模型。就想P79页说的那样，可以列出z<sub>1</sub> 和 z<sub>2t</sub> 的VMA表达式。这里面的参数是θ和∑<sub>a</sub> 。使用的方法是极大似然算法。
+在R代码里，有现成的函数nlminb来做这个极大似然函数的优化参数使这函数的object函数返回的值最小。
+</p>
+
+<p>
+eVMA相比较于VMA来说假设不一样，VMA假设的是a<sub>0</sub> = 0 ，而eVMA假设的是a<sub>0是一个随机变量</sub>。所以做最大似然估计的时候需要做的工作要多一些。
+</p>
+
+<p>
+用什么来决定用VMA还是eVMA呢？-一般来说当样本数比较大尤其是VMA(q)可逆的时候，这两个似然估计的函数相似。如果不可逆的话选用eVMA比较合适。
+模型可逆的条件在每节都有讨论。
+</p>
+</div>
+
+
+<div id="outline-container-org5569ee7" class="outline-3">
+<h3 id="org5569ee7"><span class="section-number-3">7.1</span> 一些东西短时间内看不明白，不要放弃，坚持每天看的话真的是每天都有顿悟的时刻的。</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-09-29 周五 14:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

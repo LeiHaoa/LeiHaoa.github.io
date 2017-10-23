@@ -1,103 +1,21 @@
 Multivarite Time Series Analysis
-
-* 概念知识
-** 弱平稳
-弱平稳就是说Zt的均值和协方差矩阵不依赖于时间t，即zt的前两阶矩不随时间变化。（一个隐函条件是这两个统计变量都是存在的）
-
-k维时间序列的意思是
-
-** 线性
-z_t = μ + Σ_(0-)
-
-** 交叉相关矩阵
-   + 滞后为l的 *交叉协方差矩阵* ：τ_l=Cov(z_t,z_(t-l)) 
-   + 滞后为l的 *交叉相关矩阵* :CCMρ_l = D^-1 τ_1 D^-1
-
-这两个变量的估计方值在1.4有介绍
-
-** 多元混成检验
-Ljung-Box检验统计量Q_k(m)
-
-** 自回归模型（AR）、移动平均模型（MA）、自回归移动平均模型（ARMA）以及差分自回归移动平均模型（ARIMA）辨析  
-   短期预测是我们做时间序列分析的主要目的。
-
-        时间序列分析的理论基础很简单：设若时间序列（或随机过程）的任一元素yt与其前期元素（yt-1、yt-2等）之间存在着某种关联，则我们可以根据该时间序列的既往观测值来预测其未来的取值。
- 
-       上述思路的直接体现便是自回归模型。所谓p阶自回归过程（AutoRegressive, AR），简记为AR（p)，指的是如下形式的随机过程：
-
-         yt=a1yt-1+a2yt-2+....+apyt-p+ut
-
-        其中的a1、a2、...、ap是p个待求参数；p是滞后期限的数目；ut为白噪声，也就是满足经典计量经济模型要求的随机误差项。
-
-       一般地说，在经济系统中，任何经济变量的时间序列都可以使用上述自回归过程来描述。但在模型分析的实践中，为简化估计参数的工作量，我们当然希望模型当中的参数尽可能地少。于是便有了引进移动平均过程MA（q）的必要。
-
-       考虑如下形式的（无穷阶）自回归过程：
-
-       yt=ayt-1+a^2yt-2+....+a^pyt-p+....+ut   
-
-将其时间推迟一期，有：
-
-       yt-1=ayt-2+a^2yt-3+....+a^pyt-p-1+ut-1
-
-再将上式两侧的每一项同乘以a，然后与该自回归过程的原始表达式相减，得到：
-
-      yt=ut-aut-1
-
-        我们就把这种由白噪声序列诸元素的加权和所表示的随机过程，称作移动平均过程(moving average process MA)。其中的参数数目就是该移动平均过程的阶数。例如，上式就是一个一阶移动平均过程，简记为MA（1）。
-
-       （本博主2016年11月30日注：在本博文前面所给出的AR（P)模型 yt=a1yt-1+a2yt-2+....+apyt-p+ut中，a1、a2、...、ap中的1、2、...、p均为相应a的下角标；而在这里所给出的无穷阶自回归过程yt=ayt-1+a^2yt-2+....+a^pyt-p+....+ut 中，a^1、a^2、...、a^p中的1、2、...、p均为相应a的上角标，亦即a的一次方、二次方，直至p次方。这就意味着，在前一个AR（P)中，我对自回归系数的取值并无特别要求；但在后一个AR（P)中，我却假设各个自回归系数的取值呈有规律的倍数关系。这纯粹是为了阐述逻辑的需要，是在可接受范围内的逻辑简化。诚如《庖丁解牛》云，臣之所好者，道也，进乎技矣，未尝见全牛也。因此，这种简化分析的能力实在是本博主造诣高超的具体表现，我的造诣显然在“三年之后”矣。呵呵） 
-
-        一般地，q阶移动平均过程MA（q）就是如下形式的随机过程：
-
-       yt=ut-(b1ut-1)-(b2ut-2)-(b3ut-3)-.....-(bqut-q)
-
-       由此可见，移动平均过程实际上是由自回归过程推衍而得的结果。
-
-       我们可以证明：一个平稳有限阶自回归过程必定可以转化成某个无限阶移动平均过程。反之，当某些条件（称之为可转换条件）具备的时候，一个有限阶移动平均过程也可以转换成某个无限阶自回归过程。于是，我们便可以将阶数较高的自回归过程近似地用阶数较低的移动平均过程来代替；反之，亦然。
-
-       那么，对于一个给定的时间序列样本，如何才能以最少的待估参数给出产生这一样本的随机过程呢？
-
-       一般说来，设若时间序列的自相关函数有截断点，即当阶数大于某个数值的时候，其自相关系数开始等于零，但其偏自相关系数却只是伴随着阶数的增大而逐渐减小，并无截断点，这时采取移动平均过程比较经济（亦即模型当中所包含的的参数较少）。
-
-       设若时间序列的自相关函数只是伴随着阶数的增加而逐渐衰减，并无截断点，但其偏自相关函数却有截断点，这时宜采用自回归过程。
-
-       设若时间序列的自相关函数和偏自相关函数都只是伴随着阶数的增加而逐渐衰减，但均无截断点，则无论是采用自回归模型还是采用移动平均模型，其中所包含的的待估参数都过多。这时，宜采用自回归移动平均过程ARMA（p,q）。
-
-       所谓的自回归移动平均模型(Autoregressive Moving Average,ARMA)，就是设法将自回归过程AR和移动平均过程MA结合起来，共同模拟产生既有时间序列样本数据的那个随机过程的模型。
-
-       在数学上，我们总可以将一个高阶AR过程分解成某个低阶AR过程和另一个高阶AR过程之和。设若将其中所分解出来的那个高阶AR过程用一个较低阶的MA过程来替代，则那个真实的随机过程也就由低阶AR过程和高阶AR过程之和，变换成低阶AR过程与低阶MA过程之和。这就是自回归移动平均模型的基本思路。
-
-       可见，ARMA（p,q）是一种比AR(p）和MA(q)更具普遍性的模型。而AR(p）模型和MA(q)模型可分别理解为ARMA模型的两个特例(ARMA（P,0)和ARMA(0,q))。实践中的任何时间序列都可以使用ARMA（p,q）这个模型来模拟。而且经济计量的实践经验表明，p的q的取值一般都不会超过2。
-
-       需要指出的是，AR(p)、MA(q)和ARMA(p,q)都是平稳随机过程。但在经济计量的实践中，我们所获得的时间序列经常会呈现出系统性地上升或下降等趋势。有些时间序列还呈现出周而复始的周期性波动。这样的时间序列肯定产生于非平稳的随机过程，从而不可以直接套用诸如AR(p)、MA(q)或ARMA(p,q)之类的平稳随机过程来模拟。
-
-       对于非平稳的时间序列，首先应将其平稳化。其中，差分变换是最常用的平稳化方法。然后再使用  AR(p)、MA(q)或ARMA(p,q)来模拟已平稳化的随机过程。这就是所谓的差分自回归移动平均模型(Autoregressive Integrated Moving Average Model），简记为ARIMA(p,d,q)。其中的d是实施差分变换的次数。
-
-       由此可见，ARIMA（p,d,q）是一种比ARMA（p,q）更为普遍性的模型。而ARMA（p,q）可理解为ARIMA（p,d,q）的特例(ARIMA（p,0,q）)。
-
-       对于一组给定的时间序列数据，依照上述思路寻找一个能产生这组数据的随机过程的ARIMA（p,d,q）模型方法，称为博克斯-詹金斯(Box-Jenkins)方法。它是当今主流时间序列分析理论与方法的基础。
-
-** 不存在封闭解
-   是指有解但是我们就是就是求不出来，可以利用数值方法估计一下。
-** 残差
-  残差在数理统计中是指实际观察值与估计值（拟合值）之间的差。“残差”蕴含了有关模型基本假设的重要信息。
-
-  如果回归模型正确的话， 我们可以将残差看作误差的观测值。
 * R代码解释
 ** VAR 源代码
-#+BEGIN_SRC R
+#+BEGIN_SRC  python
 function (x, p = 1, output = T, include.mean = T, fixed = NULL) 
 {
+  #p是VAR(p)，意思是t时刻的数据与它前面p个时刻数据有关
   if (!is.matrix(x)) 
     x = as.matrix(x)
-  Tn = dim(x)[1]
-  k = dim(x)[2]
-  if (p < 1) 
+  Tn = dim(x)[1]    #---有多少行
+  k = dim(x)[2]     #---有多少列，列数就是k表示k维数据
+  if (p < 1)        
     p = 1
   idm = k * p
-  ne = Tn - p
-  ist = p + 1
+  ne = Tn - p       #一共有ne个数据可以计算（预测）
+  ist = p + 1       #从ist个数据开始是可以预测的，因为ist前面没有p个数据
   y = x[ist:Tn, ]
+  # 下面到27行，将元数据组织起来得到书上的X，每一行是[x(t),x(t-1)...x(t-p)]
   if (include.mean) {
     idm = idm + 1
     xmtx = cbind(rep(1, ne), x[p:(Tn - 1), ])
@@ -107,10 +25,11 @@ function (x, p = 1, output = T, include.mean = T, fixed = NULL)
   }
   if (p > 1) {
     for (i in 2:p) {
-      xmtx = cbind(xmtx, x[(ist - i):(Tn - i), ])
+      xmtx = cbind(xmtx, x[(ist - i):(Tn - i), ])   #一共是p*k列
     }
   }
-  ndim = ncol(xmtx)
+  
+  ndim = ncol(xmtx)                        #ndim表示xmtx有多少列
   if (length(fixed) == 0) {
     paridx = matrix(1, ndim, k)
   }
@@ -122,25 +41,27 @@ function (x, p = 1, output = T, include.mean = T, fixed = NULL)
   sdbeta = matrix(0, ndim, k)
   npar = 0
   for (i in 1:k) {
-    idx = c(1:ndim)[paridx[, i] == 1]
+    idx = c(1:ndim)[paridx[, i] == 1]       #返回的是paridx中第i列中数字是1数据的行敿
+                                            #c(1:10)[c(11:20)>15] 的返回值是6 7 8 9 10
     resi = y[, i]
     if (length(idx) > 0) {
-      xm = as.matrix(xmtx[, idx])
+      xm = as.matrix(xmtx[, idx])           ### 默认下xm就是xmtx
       npar = npar + dim(xm)[2]
-      xpx = t(xm) %*% xm
-      xpxinv = solve(xpx)
-      xpy = t(xm) %*% as.matrix(y[, i], ne, 1)
-      betai = xpxinv %*% xpy
-      beta[idx, i] = betai
-      resi = y[, i] - xm %*% betai
-      nee = dim(xm)[2]
-      sse = sum(resi * resi)/(Tn - p - nee)
+      xpx = t(xm) %*% xm                    #xpx是一个(p*k) * (p*k)矩阵
+      xpxinv = solve(xpx)                   #求矩阵的逆
+      xpy = t(xm) %*% as.matrix(y[, i], ne, 1)  #xpy是一个p*k * 1矩阵     【注】p*k是xmtx的列数 = ndim
+      betai = xpxinv %*% xpy                #betai= (t(xm) . xm)^(-1) . t(xm) . t(y[,i]) 
+      beta[idx, i] = betai                  #betai是一个p*k * 1
+      resi = y[, i] - xm %*% betai          #resi ne*1
+      #以上用到公式：P49定理2.2 vec(beta^) 所以说上面方法用的是ML估计 
+      nee = dim(xm)[2]                      # nee = npar = ne
+      sse = sum(resi * resi)/(Tn - p - nee) # 下面几行与模型检验有关,这行揭示残差协方差矩阵与残差（residual）之间的关系
       dd = diag(xpxinv)
       sdbeta[idx, i] = sqrt(dd * sse)
     }
     res = cbind(res, resi)
   }
-  sse = t(res) %*% res/(Tn - p)
+  sse = t(res) %*% res/(Tn - p)             # 公式 2-55 求残差协方差矩阵
   aic = 0
   bic = 0
   hq = 0
@@ -195,14 +116,465 @@ function (x, p = 1, output = T, include.mean = T, fixed = NULL)
     cat("HQ  = ", hq, "\n")
   }
   VAR <- list(data = x, cnst = include.mean, order = p, coef = beta, 
-    aic = aic, bic = bic, hq = hq, residuals = res, secoef = sdbeta, 
-    Sigma = sse, Phi = Phi, Ph0 = Ph0)
+              aic = aic, bic = bic, hq = hq, residuals = res, secoef = sdbeta, 
+              Sigma = sse, Phi = Phi, Ph0 = Ph0)
+}
+
+
+
+#+END_SRC
+
+** VARpred 函数源码
+#+BEGIN_SRC python
+function (model, h = 1, orig = 0, Out.level = F) 
+{
+  x = model$data
+  Phi = model$Phi
+  sig = model$Sigma    #Sigma是一个正定协方差矩阵，参考定理2.2里面的定义
+  Ph0 = model$Ph0  
+  p = model$order      #var(p)
+  cnst = model$cnst    #ture
+  np = dim(Phi)[2]
+  k = dim(x)[2]
+  nT = dim(x)[1]
+  k = dim(x)[2]
+  if (orig <= 0) 
+    orig = nT
+  if (orig > nT) 
+    orig = nT
+  psi = VARpsi(Phi, h)$psi 
+  beta = t(Phi)
+  if (length(Ph0) < 1) 
+    Ph0 = rep(0, k)
+  if (p > orig) {
+    cat("Too few data points to produce forecasts", "\n")
+  }
+  pred = NULL
+  se = NULL
+  MSE = NULL
+  mse = NULL
+  px = as.matrix(x[1:orig, ])  #orig用于数据分割，只是取前orig行。
+  Past = px[orig, ]
+  if (p > 1) {
+    for (j in 1:(p - 1)) {
+      Past = c(Past, px[(orig - j), ])   #past是px的后p行展开成一维向量 即(px[-1],px[-2],...,px[-p])
+    }
+  }
+  cat("orig ", orig, "\n")
+  ne = orig - p
+  xmtx = NULL
+  P = NULL
+  if (cnst) 
+    xmtx = rep(1, ne)
+  xmtx = cbind(xmtx, x[p:(orig - 1), ])
+  ist = p + 1
+  if (p > 1) {
+    for (j in 2:p) {
+      xmtx = cbind(xmtx, x[(ist - j):(orig - j), ])
+    }
+  }
+  xmtx = as.matrix(xmtx)
+  G = t(xmtx) %*% xmtx/ne
+  Ginv = solve(G)
+  P = Phi
+  vv = Ph0
+  if (p > 1) {
+    II = diag(rep(1, k * (p - 1)))
+    II = cbind(II, matrix(0, (p - 1) * k, k))
+    P = rbind(P, II)
+    vv = c(vv, rep(0, (p - 1) * k))
+  }
+  if (cnst) {
+    c1 = c(1, rep(0, np))
+    P = cbind(vv, P)
+    P = rbind(c1, P)
+  }
+  Sig = sig
+  n1 = dim(P)[2]
+  MSE = (n1/orig) * sig
+  for (j in 1:h) {
+    tmp = Ph0 + matrix(Past, 1, np) %*% beta       # beta = t(Phi)
+                                                   #tmp 就是预测h个值,如下面的注释，也就是说这函数就预测了h个值
+    #QUESTION: 为什么这里没有加a这个向量？？ -->因为这是估计模型的预测
+    px = rbind(px, tmp)
+    #------------------预测部分到这结束，往下是预测结果的评价--------------------
+    if (np > k) {
+      Past = c(tmp, Past[1:(np - k)])
+    }
+    else {
+      Past = tmp
+    }
+    if (j > 1) {
+      idx = (j - 1) * k
+      wk = psi[, (idx + 1):(idx + k)]
+      Sig = Sig + wk %*% sig %*% t(wk)
+    }
+    if (j > 1) {
+      for (ii in 0:(j - 1)) {
+        psii = diag(rep(1, k))
+        if (ii > 0) {
+          idx = ii * k
+          psii = psi[, (idx + 1):(idx + k)]
+        }
+        P1 = P^(j - 1 - ii) %*% Ginv
+        for (jj in 0:(j - 1)) {
+          psij = diag(rep(1, k))
+          if (jj > 0) {
+            jdx = jj * k
+            psij = psi[, (jdx + 1):(jdx + k)]
+          }
+          P2 = P^(j - 1 - jj) %*% G
+          k1 = sum(diag(P1 %*% P2))
+          MSE = (k1/orig) * psii %*% sig %*% t(psij)
+        }
+      }
+    }
+    se = rbind(se, sqrt(diag(Sig)))
+    if (Out.level) {
+      cat("Covariance matrix of forecast errors at horizon: ", 
+          j, "\n")
+      print(Sig)
+      cat("Omega matrix at horizon: ", j, "\n")
+      print(MSE)
+    }
+    MSE = MSE + Sig
+    mse = rbind(mse, sqrt(diag(MSE)))
+  }
+  cat("Forecasts at origin: ", orig, "\n")
+  print(px[(orig + 1):(orig + h), ], digits = 4)
+  cat("Standard Errors of predictions: ", "\n")
+  print(se[1:h, ], digits = 4)
+  pred = px[(orig + 1):(orig + h), ]
+  cat("Root mean square errors of predictions: ", "\n")
+  print(mse[1:h, ], digits = 4)
+  if (orig < nT) {
+    cat("Observations, predicted values,     errors, and MSE", 
+        "\n")
+    tmp = NULL
+    jend = min(nT, (orig + h))
+    for (t in (orig + 1):jend) {
+      case = c(t, x[t, ], px[t, ], x[t, ] - px[t, ])
+      tmp = rbind(tmp, case)
+    }
+    colnames(tmp) <- c("time", rep("obs", k), rep("fcst", 
+                                                  k), rep("err", k))
+    idx = c(1)
+    for (j in 1:k) {
+      idx = c(idx, c(0, 1, 2) * k + j + 1)
+    }
+    tmp = tmp[, idx]
+    print(round(tmp, 4))
+  }
+  VARpred <- list(pred = pred, se.err = se, mse = mse)
+}
+
+#+END_SRC
+
+** VMA 函数源码
+#+BEGIN_SRC python
+function (da, q = 1, include.mean = T, fixed = NULL, beta = NULL, 
+          sebeta = NULL, prelim = F, details = F, thres = 2) 
+{
+  if (!is.matrix(da)) 
+    da = as.matrix(da)
+  nT = dim(da)[1]
+  k = dim(da)[2]
+  if (q < 1) 
+    q = 1
+  kq = k * q
+  #P94页3.3.3 初始参数估计一节表明 VMA的参数的初始值定义为μ_0_hat = c_hat ; θ_i_hat = -β_i_hat
+  # 其中c_hat和β_i_hat是用LS来拟合VAR模型的估计结果。这也就是THini函数出现的原因。可以看到他其
+  # 实就是把VAR源码里的估计的部分拿了出来
+  THini <- function(y, x, q, include.mean) {
+    if (!is.matrix(y)) 
+      y = as.matrix(y)
+    if (!is.matrix(x)) 
+      x = as.matrix(x)
+    nT = dim(y)[1]   # 610
+    k = dim(y)[2]    # 2
+    ist = 1 + q
+    ne = nT - q
+    if (include.mean) {
+      xmtx = matrix(1, ne, 1)
+    }
+    else {
+      xmtx = NULL
+    }
+    ymtx = y[ist:nT, ]
+    for (j in 1:q) {
+      xmtx = cbind(xmtx, x[(ist - j):(nT - j), ])
+    }                                                               ## xmtx: ne*(kq+1)
+                                                                    ## ymtx: ne*k
+    xtx = crossprod(xmtx, xmtx)  #crossprod(x,y)相当于t(x) %*% y    ## xtx : (kq+1)*(kq+1)
+    xty = crossprod(xmtx, ymtx)                                     ## xty : (kq+1)*k
+    xtxinv = solve(xtx)         #xtx的逆
+    beta = xtxinv %*% xty                                           ## beta: (kq+1)*k
+    resi = ymtx - xmtx %*% beta 
+    sse = crossprod(resi, resi)/ne
+    dd = diag(xtxinv)
+    sebeta = NULL
+    for (j in 1:k) {
+      se = sqrt(dd * sse[j, j])
+      sebeta = cbind(sebeta, se)
+    }
+    THini <- list(estimates = beta, se = sebeta)
+  }
+  if (length(fixed) < 1) {
+    m1 = VARorder(da, q + 12, output = FALSE)  # VARorfer  VAR模型的阶选择函数
+    porder = m1$aicor                          # m1$aicor得到的是通过aic这个
+    if (porder < 1) 
+      porder = 1
+    m2 = VAR(da, porder, output = FALSE)
+    y = da[(porder + 1):nT, ]
+    x = m2$residuals                           #residuals：残差
+    m3 = THini(y, x, q, include.mean)          #函数VAR()中有:resi = y[, i] - xm %*% betai // 在这里残差就是正确值与预测值的差
+    # 残差在数理统计中是指实际观察值与估计值（拟合值）之间的差。“残差”蕴含了有关模型基本假设的重要信息。如果回归模型正确的话， 我们可以将残差看作误差的观测值。
+    beta = m3$estimates
+    sebeta = m3$se
+    nr = dim(beta)[1]
+    if (prelim) {
+      fixed = matrix(0, nr, k)
+      for (j in 1:k) {
+        tt = beta[, j]/sebeta[, j]
+        idx = c(1:nr)[abs(tt) >= thres]
+        fixed[idx, j] = 1
+      }
+    }
+    if (length(fixed) < 1) {
+      fixed = matrix(1, nr, k)
+    }
+  }
+  else {
+    nr = dim(beta)[1]
+  }
+  par = NULL
+  separ = NULL
+  fix1 = fixed
+  VMAcnt = 0
+  ist = 0
+  if (include.mean) {
+    jdx = c(1:k)[fix1[1, ] == 1]   #fixed中第一行中值是1的列数
+    VMAcnt = length(jdx)
+    if (VMAcnt > 0) {
+      par = beta[1, jdx]
+      separ = sebeta[1, jdx]
+    }
+    TH = -beta[2:(kq + 1), ]
+    seTH = sebeta[2:(kq + 1), ]
+    ist = 1
+  }
+  else {
+    TH = -beta
+    seTH = sebeta
+  }
+  for (j in 1:k) {
+    idx = c(1:(nr - ist))[fix1[(ist + 1):nr, j] == 1]
+    if (length(idx) > 0) {
+      par = c(par, TH[idx, j])                  # 当fix为默认情况的时候，par=TH separ=seTH
+      separ = c(separ, seTH[idx, j])
+    }
+  }
+  ParMA <- par                                  # 当fix为默认情况的时候，ParMA=par=TH 
+  LLKvma <- function(par, zt = zt, q = q, fixed = fix1, include.mean = include.mean) {
+    # 最小似然估计的输入函数
+    k = ncol(zt)
+    nT = nrow(zt)
+    mu = rep(0, k)
+    icnt = 0
+    VMAcnt <- 0
+    fix <- fixed
+    iist = 0
+    if (include.mean) {
+      iist = 1
+      jdx = c(1:k)[fix[1, ] == 1]
+      icnt = length(jdx)
+      VMAcnt <- icnt
+      if (icnt > 0) 
+        mu[jdx] = par[1:icnt]
+    }
+    for (j in 1:k) {
+      zt[, j] = zt[, j] - mu[j]
+    }
+    kq = k * q
+    Theta = matrix(0, kq, k)
+    for (j in 1:k) {
+      idx = c(1:kq)[fix[(iist + 1):(iist + kq), j] == 
+                      1]
+      jcnt = length(idx)
+      if (jcnt > 0) {
+        Theta[idx, j] = par[(icnt + 1):(icnt + jcnt)]
+        icnt = icnt + jcnt
+      }
+    }
+    TH = t(Theta)
+    if (q > 1) {
+      tmp = cbind(diag(rep(1, (q - 1) * k)), matrix(0, 
+                                                    (q - 1) * k, k))
+      TH = rbind(TH, tmp)
+    }
+    mm = eigen(TH)   #特征分解（Eigendecomposition），又称谱分解（Spectral decomposition）是将矩阵分解为由其特征值和特征向量表示的矩阵之积的方法。
+                     #需要注意只有对可对角化矩阵才可以施以特征分解。
+    V1 = mm$values
+    P1 = mm$vectors
+    v1 = Mod(V1)     #复数的函数，如果V1 = x + yi ，那么Mod(V1) = sqrt(x^2 + y^2) .即求负数V1的模
+    ich = 0
+    for (i in 1:kq) {
+      if (v1[i] > 1) 
+        V1[i] = 1/V1[i]
+      ich = 1
+    }
+    if (ich > 0) {
+      P1i = solve(P1)              #solve(A) A矩阵求逆
+      GG = diag(V1)
+      TH = Re(P1 %*% GG %*% P1i)   #Re()函数 只取负数的real部分，保留原来格式。同理Im()函数只取虚数部分
+      Theta = t(TH[1:k, ])
+      ist = 0
+      if (VMAcnt > 0) 
+        ist = 1
+      for (j in 1:k) {
+        idx = c(1:kq)[fix[(ist + 1):(ist + kq), j] == 
+                        1]
+        jcnt = length(idx)
+        if (jcnt > 0) {
+          par[(icnt + 1):(icnt + jcnt)] = TH[j, idx]
+          icnt = icnt + jcnt
+        }
+      }
+    }
+    at = mFilter(zt, t(Theta))
+    sig = t(at) %*% at/nT
+    ll = dmvnorm(at, rep(0, k), sig)  #多元正态密度和随机偏差，这句的意思是？？？-->
+                                      #在一个均值是rep(0,k)方差是sig的多元正太分布中取到at[i]的概率分别是多少
+    LLKvma = -sum(log(ll))
+    LLKvma
+  }
+  scat("Number of parameter s: ", length(par), "\n")
+  cat("initial estimates: " , round(par, 4), "\n")
+  lowerBounds = par
+  upperBounds = par
+  npar = length(par)
+  mult = 2
+  if ((npar > 10) || (q > 2)) 
+    mult = 1.2
+  for (j in 1:npar) {
+    lowerBounds[j] = par[j] - mult * separ[j]
+    upperBounds[j] = par[j] + mult * separ[j]
+  }
+  cat("Par. Lower-bounds: ", round(lowerBounds, 4), "\n")
+  cat("Par. Upper-bounds: ", round(upperBounds, 4), "\n")
+  #---
+  #一共有length(ParMA)个参数，初始值是parMA
+  #需要最大似然概率函数是LLKvma函数，前面有定义
+  if (details) {
+    fit = nlminb(start = ParMA, objective = LLKvma, zt = da, 
+                 fixed = fixed, include.mean = include.mean, q = q, 
+                 lower = lowerBounds, upper = upperBounds, control = list(trace = 3))
+  }
+  else {
+    fit = nlminb(start = ParMA, objective = LLKvma, zt = da, 
+                 fixed = fixed, include.mean = include.mean, q = q, 
+                 lower = lowerBounds, upper = upperBounds)
+  }
+  epsilon = 1e-04 * fit$par
+  npar = length(par)
+  Hessian = matrix(0, ncol = npar, nrow = npar)
+  for (i in 1:npar) {
+    for (j in 1:npar) {
+      x1 = x2 = x3 = x4 = fit$par
+      x1[i] = x1[i] + epsilon[i]
+      x1[j] = x1[j] + epsilon[j]
+      x2[i] = x2[i] + epsilon[i]
+      x2[j] = x2[j] - epsilon[j]
+      x3[i] = x3[i] - epsilon[i]
+      x3[j] = x3[j] + epsilon[j]
+      x4[i] = x4[i] - epsilon[i]
+      x4[j] = x4[j] - epsilon[j]
+      Hessian[i, j] = (LLKvma(x1, zt = da, q = q, fixed = fixed, 
+                              include.mean = include.mean) - LLKvma(x2, zt = da, 
+                                                                    q = q, fixed = fixed, include.mean = include.mean) - 
+                         LLKvma(x3, zt = da, q = q, fixed = fixed, include.mean = include.mean) + 
+                         LLKvma(x4, zt = da, q = q, fixed = fixed, include.mean = include.mean))/(4 * 
+                                                                                                    epsilon[i] * epsilon[j])
+    }
+  }
+  est = fit$par
+  cat("Final   Estimates: ", est, "\n")
+  se.coef = sqrt(diag(solve(Hessian)))
+  tval = fit$par/se.coef
+  matcoef = cbind(fit$par, se.coef, tval, 2 * (1 - pnorm(abs(tval))))
+  dimnames(matcoef) = list(names(tval), c(" Estimate", " Std. Error", 
+                                          " t value", "Pr(>|t|)"))
+  cat("\nCoefficient(s):\n")
+  printCoefmat(matcoef, digits = 4, signif.stars = TRUE)
+  cat("---", "\n")
+  cat("Estimates in matrix form:", "\n")
+  icnt = 0
+  ist = 0
+  cnt = NULL
+  if (include.mean) {
+    ist = 1
+    cnt = rep(0, k)
+    secnt = rep(1, k)
+    jdx = c(1:k)[fix1[1, ] == 1]
+    icnt = length(jdx)
+    if (icnt > 0) {
+      cnt[jdx] = est[1:icnt]
+      secnt[jdx] = se.coef[1:icnt]
+      cat("Constant term: ", "\n")
+      cat("Estimates: ", cnt, "\n")
+    }
+  }
+  cat("MA coefficient matrix", "\n")
+  TH = matrix(0, kq, k)
+  seTH = matrix(1, kq, k)
+  for (j in 1:k) {
+    idx = c(1:kq)[fix1[(ist + 1):nr, j] == 1]
+    jcnt = length(idx)
+    if (jcnt > 0) {
+      TH[idx, j] = est[(icnt + 1):(icnt + jcnt)]
+      seTH[idx, j] = se.coef[(icnt + 1):(icnt + jcnt)]
+      icnt = icnt + jcnt
+    }
+  }
+  icnt = 0
+  for (i in 1:q) {
+    cat("MA(", i, ")-matrix", "\n")
+    theta = t(TH[(icnt + 1):(icnt + k), ])
+    print(theta, digits = 3)
+    icnt = icnt + k
+  }
+  zt = da
+  if (include.mean) {
+    for (i in 1:k) {
+      zt[, i] = zt[, i] - cnt[i]
+    }
+  }
+  at = mFilter(zt, t(TH))
+  sig = t(at) %*% at/nT
+  cat(" ", "\n")
+  cat("Residuals cov-matrix:", "\n")
+  print(sig)
+  dd = det(sig)
+  d1 = log(dd)
+  aic = d1 + 2 * npar/nT
+  bic = d1 + log(nT) * npar/nT
+  cat("----", "\n")
+  cat("aic= ", aic, "\n")
+  cat("bic= ", bic, "\n")
+  Theta = t(TH)
+  if (include.mean) {
+    TH = rbind(cnt, TH)
+    seTH = rbind(secnt, seTH)
+  }
+  VMA <- list(data = da, MAorder = q, cnst = include.mean, 
+              coef = TH, secoef = seTH, residuals = at, Sigma = sig, 
+              Theta = Theta, mu = cnt, aic = aic, bic = bic)
 }
 #+END_SRC
 
 
-#+END_SRC
 ** VMA函数
+
 VMA模型主要用到了书上的P85页 3.7 下面的函数。也用到了3.7上面的一列，我们要估计的是θ （维度是1*k）。
 
 要最小化的最大似然函数和nlminb函数定义是这样的：
@@ -218,6 +590,31 @@ fit = nlminb(start = ParMA, objective = LLKvma, zt = da,
 其中，par是我们要估计的参数，即μ和θ_i,一共是(kq+1)*k个变量（μ是1*k，θ_i是1*k,一共q个θ）。
 -sum(log(dmvonorm(at,rep(0,k),sig)) == 书中的Σlog(P(a_t|θ1，Σa)) 
 
+* 概念知识
+** 弱平稳
+弱平稳就是说Zt的均值和协方差矩阵不依赖于时间t，即zt的前两阶矩不随时间变化。（一个隐函条件是这两个统计变量都是存在的）
+
+** 线性
+z_t = μ + Σ_(0-)
+
+** 交叉相关矩阵
+   + 滞后为l的 *交叉协方差矩阵* ：τ_l=Cov(z_t,z_(t-l)) 
+   + 滞后为l的 *交叉相关矩阵* :CCMρ_l = D^-1 τ_1 D^-1
+
+这两个变量的估计方值在1.4有介绍
+
+** 多元混成检验
+Ljung-Box检验统计量Q_k(m)
+
+** 自回归模型（AR）、移动平均模型（MA）、自回归移动平均模型（ARMA）以及差分自回归移动平均模型（ARIMA）辨析  
+   + [[http://lidequan12345.blog.163.com/blog/static/28985036201321074325444/][这个博客]]
+   + 
+** 不存在封闭解
+   是指有解但是我们就是就是求不出来，可以利用数值方法估计一下。
+** 残差
+  残差在数理统计中是指实际观察值与估计值（拟合值）之间的差。“残差”蕴含了有关模型基本假设的重要信息。
+
+  如果回归模型正确的话， 我们可以将残差看作误差的观测值。
 * R语言函数的一些注释
 ** diff(x,lag,differences)
 diff是返回滞后的迭代差异。
@@ -249,17 +646,21 @@ diff是返回滞后的迭代差异。
 _______________________________________________________________________________________
 * QUESTIONS
 1. 方程的phi是怎么确定的？？在例子程序中，都是直接给出来的。那么在实际中呢？？？
+
    解：是估计出来的，在模型估计中有公式
 2. VAR模型中的Sigmaa是什么用途的？？
+
    解：Sigma是残差协方差矩阵，是用来进行模型估计的。在VAR(p)模型的估计过程，主要估计的就是Phi和Sigma。
-3. 还不知道怎么怎么评价VAR模型？是通过什么指标来评测怎么样算好这么样算不好？？
-4. sigma（协方差矩阵）的意义是什么
-5. include.mean 的意义是什么？？
-   
+3. include.mean 的意义是什么？？
+4. 在varpred函数里面预测时候并没有加a这个向量？
+
+   解：在P2.9.2 估计模型的预测中，可以看到估计模型的预测是不需要加最后的a向量的。只是这样： z_h = φ0 + Σφ_i z_h(l-i)
+       就可以了
+
 * 改成C语言的可能障碍
-** eigen函数 是矩阵的谱分解函数，不知道C语言里面有没有相应的函数来解决矩阵的谱分解
-** solve函数来求矩阵的逆
-** 还有一个nlminb函数是一个优化函数，不知道具体是怎么实现的。可能还需要在深入看这个函数的源代码
+** DONE eigen函数 是矩阵的谱分解函数，不知道C语言里面有没有相应的函数来解决矩阵的谱分解
+** DONE solve函数来求矩阵的逆
+** TODO 还有一个nlminb函数是一个优化函数，不知道具体是怎么实现的。可能还需要在深入看这个函数的源代码
 nlminb(start, objective, gradient = NULL, hessian = NULL, ...,
        scale = 1, control = list(), lower = -Inf, upper = Inf)
 
@@ -904,7 +1305,7 @@ int main()
 
 
 * 随想
-多元时间序列有多个时间序列，之所以要使用多元原因是因为可能两只股票之间存在一定的联系，最简单的我们可以想到的是z_1t受z_2(t-1) 和z_1(t-1),也就是z1和z2前面数值的影响，受其影响的大小体现在参数φ里面，在估计过程中
+  多元时间序列有多个时间序列，之所以要使用多元原因是因为可能两只股票之间存在一定的联系，最简单的我们可以想到的是z_1t受z_2(t-1) 和z_1(t-1),也就是z1和z2前面数值的影响，受其影响的大小体现在参数φ里面，在估计过程中
 我们就能将相关性大的参数估计的数大而相关性小的估计的参数小。像P21页解释的那样，要是φ1,21 ！= 0 的话说明z_2t 依赖于z_1t的过去值。这样多元时间序列的关系就体现出来了。
 
 另外一个比较简单的模型是VMA模型。就想P79页说的那样，可以列出z_1 和 z_2t 的VMA表达式。这里面的参数是θ和∑_a 。使用的方法是极大似然算法。
@@ -917,6 +1318,6 @@ eVMA相比较于VMA来说假设不一样，VMA假设的是a_0 = 0 ，而eVMA假�
 
 
 ** 一些东西短时间内看不明白，不要放弃，坚持每天看的话真的是每天都有顿悟的时刻的。
-
+   
 
 
