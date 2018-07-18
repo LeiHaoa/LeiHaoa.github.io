@@ -1,119 +1,119 @@
 emacs
 
-* ¿ì½İ¼ü
+* å¿«æ·é”®
 ** book marks
-*** ÊéÇ©ÃüÁîËÙ²é±í
-| ¿ì½İ¼ü  | º¯Êı               | ½éÉÜ                                 |
+*** ä¹¦ç­¾å‘½ä»¤é€ŸæŸ¥è¡¨
+| å¿«æ·é”®  | å‡½æ•°               | ä»‹ç»                                 |
 |---------+--------------------+--------------------------------------|
-| C-x r m | bookmark-set       | ÔÚ¹â±êµ±Ç°Î»ÖÃÉèÖÃÊéÇ©               |
-| C-x r b | bookmark-jump      | Ìø×ªµ½ÊéÇ©                           |
-| nil     | bookmark-rename    | ÖØÃüÃûÊéÇ©                           |
-| nil     | bookmark-delete    | É¾³ıÒ»¸öÊéÇ©                         |
-| C-x r l | bookmark-menu-list | ½øÈë*bookmark list*±à¼­»º³åÇø        |
-| nil     | bookmark-insert    | ²åÈëÓë¸ø¶¨ÊéÇ©¹ØÁª×ÅµÄÎÄ¼şµÄÍêÕûÄÚÈİ |
-| nil     | bookmark-write     | °ÑÈ«²¿ÊéÇ©±£´æµ½Ö¸¶¨ÎÄ¼şÀï           |
-| nil     | bookmark-load      | ´ÓÖ¸¶¨ÎÄ¼şÀï¼ÓÔØÊéÇ©                 |
+| C-x r m | bookmark-set       | åœ¨å…‰æ ‡å½“å‰ä½ç½®è®¾ç½®ä¹¦ç­¾               |
+| C-x r b | bookmark-jump      | è·³è½¬åˆ°ä¹¦ç­¾                           |
+| nil     | bookmark-rename    | é‡å‘½åä¹¦ç­¾                           |
+| nil     | bookmark-delete    | åˆ é™¤ä¸€ä¸ªä¹¦ç­¾                         |
+| C-x r l | bookmark-menu-list | è¿›å…¥*bookmark list*ç¼–è¾‘ç¼“å†²åŒº        |
+| nil     | bookmark-insert    | æ’å…¥ä¸ç»™å®šä¹¦ç­¾å…³è”ç€çš„æ–‡ä»¶çš„å®Œæ•´å†…å®¹ |
+| nil     | bookmark-write     | æŠŠå…¨éƒ¨ä¹¦ç­¾ä¿å­˜åˆ°æŒ‡å®šæ–‡ä»¶é‡Œ           |
+| nil     | bookmark-load      | ä»æŒ‡å®šæ–‡ä»¶é‡ŒåŠ è½½ä¹¦ç­¾                 |
 
-*** Êéµ¥Çåµ¥±à¼­ÃüÁîËÙ²é±í
-| ÃüÁî | ¶¯×÷                                                             |
+*** ä¹¦å•æ¸…å•ç¼–è¾‘å‘½ä»¤é€ŸæŸ¥è¡¨
+| å‘½ä»¤ | åŠ¨ä½œ                                                             |
 |------+------------------------------------------------------------------|
-| d    | ¸øÊéÇ©¼ÓÉÏ´ıÉ¾³ı±ê¼Ç                                             |
-| r    | ¶ÔÊéÇ©ÖØÃüÃû                                                     |
-| s    | ±£´æÊéÇ©ÀïµÄÈ«²¿ÊéÇ©                                             |
-| f    | ÏÔÊ¾¹â±êÎ»ÖÃÉÏµÄ±êÇ©                                             |
-| m    | ¸øÊéÇ©¼ÓÉÏ´ıÏÔÊ¾±ê¼Ç                                             |
-| v    | ÏÔÊ¾¼ÓÓĞ´øÏÔÊ¾µÄÊéÇ©¡£Èç¹ûÃ»ÓĞ´ıÏÔÊ¾µÄ¾ÍÏÔÊ¾¹â±êËùÔÚ´¦µÄÄÇ¸ö±êÇ© |
-| t    | ÇĞ»»ÊéÇ©¹ØÁªÎÄ¼şµÄ´æ·ÅÎ»ÖÃ                                       |
-| w    | ÏÔÊ¾ÊéÇ©¹ØÁªÎÄ¼şµÄ´æ·ÅÎ»ÖÃ                                       |
-| x    | É¾³ı¼ÓÓĞ´ıÉ¾³ı±ê¼ÇµÄÊéÇ©                                         |
-| q    | ÍË³öÊéÇ©Çåµ¥                                                     |
+| d    | ç»™ä¹¦ç­¾åŠ ä¸Šå¾…åˆ é™¤æ ‡è®°                                             |
+| r    | å¯¹ä¹¦ç­¾é‡å‘½å                                                     |
+| s    | ä¿å­˜ä¹¦ç­¾é‡Œçš„å…¨éƒ¨ä¹¦ç­¾                                             |
+| f    | æ˜¾ç¤ºå…‰æ ‡ä½ç½®ä¸Šçš„æ ‡ç­¾                                             |
+| m    | ç»™ä¹¦ç­¾åŠ ä¸Šå¾…æ˜¾ç¤ºæ ‡è®°                                             |
+| v    | æ˜¾ç¤ºåŠ æœ‰å¸¦æ˜¾ç¤ºçš„ä¹¦ç­¾ã€‚å¦‚æœæ²¡æœ‰å¾…æ˜¾ç¤ºçš„å°±æ˜¾ç¤ºå…‰æ ‡æ‰€åœ¨å¤„çš„é‚£ä¸ªæ ‡ç­¾ |
+| t    | åˆ‡æ¢ä¹¦ç­¾å…³è”æ–‡ä»¶çš„å­˜æ”¾ä½ç½®                                       |
+| w    | æ˜¾ç¤ºä¹¦ç­¾å…³è”æ–‡ä»¶çš„å­˜æ”¾ä½ç½®                                       |
+| x    | åˆ é™¤åŠ æœ‰å¾…åˆ é™¤æ ‡è®°çš„ä¹¦ç­¾                                         |
+| q    | é€€å‡ºä¹¦ç­¾æ¸…å•                                                     |
 
-** shell ÃüÁî
+** shell å‘½ä»¤
 
-| ¿ì½İ¼ü    | º¯Êı                        | ¶¯×÷                                                |
+| å¿«æ·é”®    | å‡½æ•°                        | åŠ¨ä½œ                                                |
 |-----------+-----------------------------+-----------------------------------------------------|
-| C-c C-c   | comint-interrput-subjob     | ÖĞ¶Ïµ±Ç°ÊäÈë                                        |
-| C-d       | comint-delchar-or-maybe-eof | ÔÚ±à¼­»º³åÇøÄ©Î²Ê±ËÍ³öEOF£»ÈôÔÚÆäËûÎ»ÖÃÉ¾³ıÒ»¸ö×Ö·û |
-| C-c C-d   | comint-send-eof             | ËÍ³öEOF                                             |
-| C-c C-u   | comint-kill-input           | É¾³ıµ±Ç°ĞĞ                                          |
-| M-p       | comint-previous-input       | ¼ìË÷ÉÏÒ»¸öÃüÁî                                      |
-| M-n       | comint-next-input           | ¼ìË÷ÏÂÒ»¸öÃüÁî                                      |
-| C-c C-o   | comint-kill-output          | É¾³ı×îºóÒ»ÌõÃüÁîµÄÊä³ö                              |
-| C-c C-r   | comint-show-output          | °ÑÊä³öÄÚÈİµÄµÚÒ»ĞĞÒÆ¶¯µ½´°¿ÚµÄ¶¥²¿                  |
-| C-c C-e   | comint-show-maximun-output  | °ÑÊä³öÄÚÈİµÄ×îºóÒ»ĞĞÒÆ¶¯µ½´°¿Úµ×²¿                  |
-| C-c C-n/p | comint-previous/next-prompt | ÒÆ¶¯µ½Ç°/ºóÒ»ÌõÃüÁî                                 |
+| C-c C-c   | comint-interrput-subjob     | ä¸­æ–­å½“å‰è¾“å…¥                                        |
+| C-d       | comint-delchar-or-maybe-eof | åœ¨ç¼–è¾‘ç¼“å†²åŒºæœ«å°¾æ—¶é€å‡ºEOFï¼›è‹¥åœ¨å…¶ä»–ä½ç½®åˆ é™¤ä¸€ä¸ªå­—ç¬¦ |
+| C-c C-d   | comint-send-eof             | é€å‡ºEOF                                             |
+| C-c C-u   | comint-kill-input           | åˆ é™¤å½“å‰è¡Œ                                          |
+| M-p       | comint-previous-input       | æ£€ç´¢ä¸Šä¸€ä¸ªå‘½ä»¤                                      |
+| M-n       | comint-next-input           | æ£€ç´¢ä¸‹ä¸€ä¸ªå‘½ä»¤                                      |
+| C-c C-o   | comint-kill-output          | åˆ é™¤æœ€åä¸€æ¡å‘½ä»¤çš„è¾“å‡º                              |
+| C-c C-r   | comint-show-output          | æŠŠè¾“å‡ºå†…å®¹çš„ç¬¬ä¸€è¡Œç§»åŠ¨åˆ°çª—å£çš„é¡¶éƒ¨                  |
+| C-c C-e   | comint-show-maximun-output  | æŠŠè¾“å‡ºå†…å®¹çš„æœ€åä¸€è¡Œç§»åŠ¨åˆ°çª—å£åº•éƒ¨                  |
+| C-c C-n/p | comint-previous/next-prompt | ç§»åŠ¨åˆ°å‰/åä¸€æ¡å‘½ä»¤                                 |
 |           |                             |                                                     |
 
 ** dired                           #<<dir>>
-| ¿ì½İ¼ü | º¯Êı                    | ¶¯×÷                                     |
+| å¿«æ·é”® | å‡½æ•°                    | åŠ¨ä½œ                                     |
 |--------+-------------------------+------------------------------------------|
-| % m    | dired-mark-files-regexp | ¸øÆ¥ÅäÕâ¸öÕıÔò±í´ïÊ½µÄÎÄ¼ş¼ÓÉÏ´ı²Ù×÷±ê¼Ç |
-| % d    | dired-flag-files-regexp | ¸øÆ¥ÅäÕâ¸öÕıÔò±í´ïÊ½µÄÎÄ¼ş¼ÓÉÏ´ıÉ¾³ı±ê¼Ç |
+| % m    | dired-mark-files-regexp | ç»™åŒ¹é…è¿™ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æ–‡ä»¶åŠ ä¸Šå¾…æ“ä½œæ ‡è®° |
+| % d    | dired-flag-files-regexp | ç»™åŒ¹é…è¿™ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æ–‡ä»¶åŠ ä¸Šå¾…åˆ é™¤æ ‡è®° |
 |        |                         |                                          |
 
 * org mode
-** Á´½Ó                                                                :org:
-*** ÄÚ²¿Á´½Ó
-    + ¶¨Òå *Ãªµã*    #<<my-anchor>>
-       [[my-anchor][ÄÚ²¿Á´½Ó]]   --> "[ [my-anchor ] [ ÄÚ²¿Á´½Ó ] ]"
-    + Ìí¼Ó *½Å×¢* Á´½Ó 
-    ¶¨Òå½Å×¢ [fn:footprint1] 
+** é“¾æ¥                                                                :org:
+*** å†…éƒ¨é“¾æ¥
+    + å®šä¹‰ *é”šç‚¹*    #<<my-anchor>>
+       [[my-anchor][å†…éƒ¨é“¾æ¥]]   --> "[ [my-anchor ] [ å†…éƒ¨é“¾æ¥ ] ]"
+    + æ·»åŠ  *è„šæ³¨* é“¾æ¥ 
+    å®šä¹‰è„šæ³¨ [fn:footprint1] 
 
-*** ´´½¨Á´½Ó
-| ¿ì½İ¼ü	 | ÃüÁî	            | ËµÃ÷                                 |
-| C-c l	  | 	                | ±£´æÁ´½Ó                             |
-| C-c C-l  | org-insert-link	 | ´´½¨»òĞŞ¸ÄÁ´½Ó£¬¿ÉÒÔÒıÓÃÒÑ±£´æµÄÁ´½Ó |
-| C-c C-o  | org-open-at-point | 	´ò¿ªÁ´½Ó                           |
-| C-c %	  | 	                | ¼ÇÂ¼ÄÚ²¿Á´½ÓµØÖ·                     |
-| C-c &	  | 	                | Ìø×ªµ½ÒÑ¼ÇÂ¼µÄÄÚ²¿Á´½Ó               |
+*** åˆ›å»ºé“¾æ¥
+| å¿«æ·é”®	 | å‘½ä»¤	            | è¯´æ˜                                 |
+| C-c l	  | 	                | ä¿å­˜é“¾æ¥                             |
+| C-c C-l  | org-insert-link	 | åˆ›å»ºæˆ–ä¿®æ”¹é“¾æ¥ï¼Œå¯ä»¥å¼•ç”¨å·²ä¿å­˜çš„é“¾æ¥ |
+| C-c C-o  | org-open-at-point | 	æ‰“å¼€é“¾æ¥                           |
+| C-c %	  | 	                | è®°å½•å†…éƒ¨é“¾æ¥åœ°å€                     |
+| C-c &	  | 	                | è·³è½¬åˆ°å·²è®°å½•çš„å†…éƒ¨é“¾æ¥               |
 
-** ±í¸ñ                                                                :org:
-*** µ÷ÕûºÍÇøÓòÒÆ¶¯ 
-| ¿ì½İ¼ü  | ÃüÁî | ËµÃ÷                           |
-| C-c C-c |      | µ÷Õû±í¸ñ£¬²»ÒÆ¶¯¹â±ê           |
-| TAB     |      | ÒÆ¶¯µ½ÏÂÒ»ÇøÓò£¬±ØÒªÊ±ĞÂ½¨Ò»ĞĞ |
-| S-TAB   |      | ÒÆ¶¯µ½ÉÏÒ»ÇøÓò                 |
-| RET     |      | ÒÆ¶¯µ½ÏÂÒ»ĞĞ£¬±ØÒªÊ±ĞÂ½¨Ò»ĞĞ   |
+** è¡¨æ ¼                                                                :org:
+*** è°ƒæ•´å’ŒåŒºåŸŸç§»åŠ¨ 
+| å¿«æ·é”®  | å‘½ä»¤ | è¯´æ˜                           |
+| C-c C-c |      | è°ƒæ•´è¡¨æ ¼ï¼Œä¸ç§»åŠ¨å…‰æ ‡           |
+| TAB     |      | ç§»åŠ¨åˆ°ä¸‹ä¸€åŒºåŸŸï¼Œå¿…è¦æ—¶æ–°å»ºä¸€è¡Œ |
+| S-TAB   |      | ç§»åŠ¨åˆ°ä¸Šä¸€åŒºåŸŸ                 |
+| RET     |      | ç§»åŠ¨åˆ°ä¸‹ä¸€è¡Œï¼Œå¿…è¦æ—¶æ–°å»ºä¸€è¡Œ   |
 
-*** ´´½¨ºÍ×ª»¯±í¸ñ
- | ¿ì½İ¼ü   | ÃüÁî | ËµÃ÷             |
- | C-c ÊúÏß |      | ´´½¨»ò×ª»»³É±í¸ñ |
+*** åˆ›å»ºå’Œè½¬åŒ–è¡¨æ ¼
+ | å¿«æ·é”®   | å‘½ä»¤ | è¯´æ˜             |
+ | C-c ç«–çº¿ |      | åˆ›å»ºæˆ–è½¬æ¢æˆè¡¨æ ¼ |
 
-*** ±à¼­ĞĞºÍÁĞ
-| ¿ì½İ¼ü         | ÃüÁî | ËµÃ÷                             |
-| M-LEFT/RIGHT   |      | ÒÆ¶¯ÁĞ                           |
-| M-UP/DOWN      |      | ÒÆ¶¯ĞĞ                           |
-| M-S-LEFT/RIGHT |      | É¾³ı/²åÈëÁĞ                      |
-| M-S-UP/DOWN    |      | É¾³ı/²åÈëĞĞ                      |
-| C-c -          |      | Ìí¼ÓË®Æ½·Ö¸îÏß                   |
-| C-c RET        |      | Ìí¼ÓË®Æ½·Ö¸îÏß²¢Ìøµ½ÏÂÒ»ĞĞ       |
-| C-c ^          |      | ¸ù¾İµ±Ç°ÁĞÅÅĞò£¬¿ÉÒÔÑ¡ÔñÅÅĞò·½Ê½ |
-** ÁĞ±í
-**** ÁĞ±í²Ù×÷¿ì½İ¼ü
-| ¿ì½İ¼ü         | ÃüÁî | ËµÃ÷                      |
-| TAB            |      | ÕÛµşÁĞ±íÏî                |
-| M-RET          |      | ²åÈëÏî                    |
-| M-S-RET        |      | ²åÈë´ø¸´Ñ¡¿òµÄÏî          |
-| M-S-UP/DOWN    |      | ÒÆ¶¯ÁĞ±íÏî                |
-| M-LEFT/RIGHT   |      | Éı/½µ¼¶ÁĞ±íÏî£¬²»°üÀ¨×ÓÏî |
-| M-S-LEFT/RIGTH |      | Éı/½µ¼¶ÁĞ±íÏî£¬°üÀ¨×ÓÏî   |
-| C-c C-c        |      | ¸Ä±ä¸´Ñ¡¿ò×´Ì¬            |
-| C-c -          |      | ¸ü»»ÁĞ±í±ê¼Ç£¨Ñ­»·ÇĞ»»£©  |
+*** ç¼–è¾‘è¡Œå’Œåˆ—
+| å¿«æ·é”®         | å‘½ä»¤ | è¯´æ˜                             |
+| M-LEFT/RIGHT   |      | ç§»åŠ¨åˆ—                           |
+| M-UP/DOWN      |      | ç§»åŠ¨è¡Œ                           |
+| M-S-LEFT/RIGHT |      | åˆ é™¤/æ’å…¥åˆ—                      |
+| M-S-UP/DOWN    |      | åˆ é™¤/æ’å…¥è¡Œ                      |
+| C-c -          |      | æ·»åŠ æ°´å¹³åˆ†å‰²çº¿                   |
+| C-c RET        |      | æ·»åŠ æ°´å¹³åˆ†å‰²çº¿å¹¶è·³åˆ°ä¸‹ä¸€è¡Œ       |
+| C-c ^          |      | æ ¹æ®å½“å‰åˆ—æ’åºï¼Œå¯ä»¥é€‰æ‹©æ’åºæ–¹å¼ |
+** åˆ—è¡¨
+**** åˆ—è¡¨æ“ä½œå¿«æ·é”®
+| å¿«æ·é”®         | å‘½ä»¤ | è¯´æ˜                      |
+| TAB            |      | æŠ˜å åˆ—è¡¨é¡¹                |
+| M-RET          |      | æ’å…¥é¡¹                    |
+| M-S-RET        |      | æ’å…¥å¸¦å¤é€‰æ¡†çš„é¡¹          |
+| M-S-UP/DOWN    |      | ç§»åŠ¨åˆ—è¡¨é¡¹                |
+| M-LEFT/RIGHT   |      | å‡/é™çº§åˆ—è¡¨é¡¹ï¼Œä¸åŒ…æ‹¬å­é¡¹ |
+| M-S-LEFT/RIGTH |      | å‡/é™çº§åˆ—è¡¨é¡¹ï¼ŒåŒ…æ‹¬å­é¡¹   |
+| C-c C-c        |      | æ”¹å˜å¤é€‰æ¡†çŠ¶æ€            |
+| C-c -          |      | æ›´æ¢åˆ—è¡¨æ ‡è®°ï¼ˆå¾ªç¯åˆ‡æ¢ï¼‰  |
 
-**** ÎåÌõ¶ÌÏßÒÔÉÏÏÔÊ¾Îª·Ö¸îÏß
+**** äº”æ¡çŸ­çº¿ä»¥ä¸Šæ˜¾ç¤ºä¸ºåˆ†å‰²çº¿
 
-** ±êÇ©
-** ÔªÊı¾İ
-*** ÎÄµµÔªÊı¾İ
+** æ ‡ç­¾
+** å…ƒæ•°æ®
+*** æ–‡æ¡£å…ƒæ•°æ®
 #+BEGIN_EXAMPLE 
-Ö÷ÒªÊÇÎªÎÄµµÌí¼ÓÒ»Ğ©¡±ÔªÊı¾İ¡°£¬Ê¹µÃ·¢²¼µÄÊ±ºòÄÜ¸üºÃµØÊ¶±ğÎÄµµµÄÄÚÈİ¡£
+ä¸»è¦æ˜¯ä¸ºæ–‡æ¡£æ·»åŠ ä¸€äº›â€å…ƒæ•°æ®â€œï¼Œä½¿å¾—å‘å¸ƒçš„æ—¶å€™èƒ½æ›´å¥½åœ°è¯†åˆ«æ–‡æ¡£çš„å†…å®¹ã€‚
   #+TITLE:       the title to be shown (default is the buffer name)
   #+AUTHOR:      the author (default taken from user-full-name)
   #+DATE:        a date, an Org timestamp1, or a format string for format-time-string
   #+EMAIL:       his/her email address (default from user-mail-address)
   #+DESCRIPTION: the page description, e.g. for the XHTML meta tag
   #+KEYWORDS:    the page keywords, e.g. for the XHTML meta tag
-  #+LANGUAGE:    language for HTML, e.g. ¡®en¡¯ (org-export-default-language)
+  #+LANGUAGE:    language for HTML, e.g. â€˜enâ€™ (org-export-default-language)
   #+TEXT:        Some descriptive text to be inserted at the beginning.
   #+TEXT:        Several lines may be given.
   #+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...
@@ -127,59 +127,59 @@ emacs
   #+XSLT:        the XSLT stylesheet used by DocBook exporter to generate FO file
 #+END_EXAMPLE
 
-*** ÄÚÈİÔªÊı¾İ
-    Í¨³£ÔÚĞĞÊ×ÒÔ¡°#+¡±¿ªÍ·£¬¿ÉÒÔÓĞ¶àÖÖÓÃÍ¾¡£
-**** *·ÖĞĞÇø¿é*
-Ä¬ÈÏÄÚÈİ²»»»ĞĞ£¬ĞèÒªÁô³ö¿ÕĞĞ²ÅÄÜ»»ĞĞ¡£¶¨ÒåÁË·ÖĞĞµÄÇø¿é¿ÉÒÔÊµÏÖÆÕÍ¨»»ĞĞ£º
+*** å†…å®¹å…ƒæ•°æ®
+    é€šå¸¸åœ¨è¡Œé¦–ä»¥â€œ#+â€å¼€å¤´ï¼Œå¯ä»¥æœ‰å¤šç§ç”¨é€”ã€‚
+**** *åˆ†è¡ŒåŒºå—*
+é»˜è®¤å†…å®¹ä¸æ¢è¡Œï¼Œéœ€è¦ç•™å‡ºç©ºè¡Œæ‰èƒ½æ¢è¡Œã€‚å®šä¹‰äº†åˆ†è¡Œçš„åŒºå—å¯ä»¥å®ç°æ™®é€šæ¢è¡Œï¼š
 #+BEGIN_VERSE
  Great clouds overhead
  Tiny black birds rise and fall
  Snow covers Emacs
      -- AlexSchroeder
 #+END_VERSE
-**** *Ëõ½øÇø¿é*
-Í¨³£ÓÃÓÚÒıÓÃ£¬ÓëÄ¬ÈÏ¸ñÊ½Ïà±È×óÓÒ¶¼»áÁô³öËõ½ø£º
+**** *ç¼©è¿›åŒºå—*
+é€šå¸¸ç”¨äºå¼•ç”¨ï¼Œä¸é»˜è®¤æ ¼å¼ç›¸æ¯”å·¦å³éƒ½ä¼šç•™å‡ºç¼©è¿›ï¼š
 #+BEGIN_QUOTE
-  Ëõ½øÇø¿é
+  ç¼©è¿›åŒºå—
 #+END_QUOTE
-**** *¾ÓÖĞÇø¿é*
+**** *å±…ä¸­åŒºå—*
 #+BEGIN_CENTER
 Everything should be made as simple as possible, \\
 but not any simpler
 #+END_CENTER
-**** *´úÂëÇø¿é*
+**** *ä»£ç åŒºå—*
 #+BEGIN_SRC ruby
   require 'redcarpet'
   md = Redcarpet.new("Hello, world.")
   puts md.to_html
 #+END_SRC
-**** *Àı×Ó*
-: µ¥ĞĞµÄÀı×ÓÒÔÃ°ºÅ¿ªÍ·
+**** *ä¾‹å­*
+: å•è¡Œçš„ä¾‹å­ä»¥å†’å·å¼€å¤´
 
 #+BEGIN_EXAMPLE
-¶àĞĞµÄÀı×Ó
-Ê¹ÓÃÇø¿é
+å¤šè¡Œçš„ä¾‹å­
+ä½¿ç”¨åŒºå—
 #+END_EXAMPLE
-**** *×¢ÊÍ*
-ÒÔ¡®#¡®¿ªÍ·µÄĞĞ±»¿´×÷×¢ÊÍ£¬²»»á±»µ¼³ö
-Çø¿é×¢ÊÍ²ÉÓÃÈçÏÂĞ´·¨£º
+**** *æ³¨é‡Š*
+ä»¥â€˜#â€˜å¼€å¤´çš„è¡Œè¢«çœ‹ä½œæ³¨é‡Šï¼Œä¸ä¼šè¢«å¯¼å‡º
+åŒºå—æ³¨é‡Šé‡‡ç”¨å¦‚ä¸‹å†™æ³•ï¼š
 
 #+BEGIN_COMMENT
-  ¿é×¢ÊÍ
+  å—æ³¨é‡Š
   ...
  #+END_COMMENT
-**** *±í¸ñÓëÍ¼Æ¬*
-¶ÔÓÚ±í¸ñºÍÍ¼Æ¬£¬¿ÉÒÔÔÚÇ°ÃæÔö¼Ó±êÌâºÍ±êÇ©µÄËµÃ÷£¬ÒÔ·½±ã½»²æÒıÓÃ¡£
-±ÈÈçÔÚ±í¸ñµÄÇ°ÃæÌí¼Ó£º
+**** *è¡¨æ ¼ä¸å›¾ç‰‡*
+å¯¹äºè¡¨æ ¼å’Œå›¾ç‰‡ï¼Œå¯ä»¥åœ¨å‰é¢å¢åŠ æ ‡é¢˜å’Œæ ‡ç­¾çš„è¯´æ˜ï¼Œä»¥æ–¹ä¾¿äº¤å‰å¼•ç”¨ã€‚
+æ¯”å¦‚åœ¨è¡¨æ ¼çš„å‰é¢æ·»åŠ ï¼š
 #+BEGIN_EXAMPLE
 #+CAPTION:This is the caption for the next table (or link)
 #+LABEL: tbl:table1:
 #+END_EXAMPLE
-ÔòÔÚĞèÒªµÄµØ·½¿ÉÒÔÍ¨¹ı
+åˆ™åœ¨éœ€è¦çš„åœ°æ–¹å¯ä»¥é€šè¿‡
 \ref{table1}
-À´ÒıÓÃ¸Ã±í¸ñ¡£
-**** *Ç¶Èëhtml*
-¶ÔÓÚµ¼³öhtmlÒÔ¼°·¢²¼£¬Ç¶Èëhtml´úÂë¾ÍºÜÓĞÓÃ¡£±ÈÈçÏÂÃæµÄÀı×ÓÊÊÓÃÓÚ¸ñÊ½»¯ÎªcnblogsµÄ´úÂë¿é£º
+æ¥å¼•ç”¨è¯¥è¡¨æ ¼ã€‚
+**** *åµŒå…¥html*
+å¯¹äºå¯¼å‡ºhtmlä»¥åŠå‘å¸ƒï¼ŒåµŒå…¥htmlä»£ç å°±å¾ˆæœ‰ç”¨ã€‚æ¯”å¦‚ä¸‹é¢çš„ä¾‹å­é€‚ç”¨äºæ ¼å¼åŒ–ä¸ºcnblogsçš„ä»£ç å—ï¼š
 
 #+BEGIN_HTML
   <div class="cnblogs_Highlighter">
@@ -191,16 +191,16 @@ but not any simpler
   </pre>
   </div>
 #+END_HTML
-Ïàµ±ÓÚÔÚcnblogsµÄÍøÒ³±à¼­Æ÷ÖĞ²åÈë"c++"´úÂë¡£
+ç›¸å½“äºåœ¨cnblogsçš„ç½‘é¡µç¼–è¾‘å™¨ä¸­æ’å…¥"c++"ä»£ç ã€‚
 
-**** *Ç¶Èë°üº¬ÎÄ¼ş*
-µ±µ¼³öÎÄµµÊ±£¬Äã¿ÉÒÔ°üº¬ÆäËûÎÄ¼şÖĞµÄÄÚÈİ¡£±ÈÈç£¬Ïë°üº¬ÄãµÄ¡°.emacs¡±ÎÄ¼ş£¬Äã¿ÉÒÔÓÃ£º
+**** *åµŒå…¥åŒ…å«æ–‡ä»¶*
+å½“å¯¼å‡ºæ–‡æ¡£æ—¶ï¼Œä½ å¯ä»¥åŒ…å«å…¶ä»–æ–‡ä»¶ä¸­çš„å†…å®¹ã€‚æ¯”å¦‚ï¼Œæƒ³åŒ…å«ä½ çš„â€œ.emacsâ€æ–‡ä»¶ï¼Œä½ å¯ä»¥ç”¨ï¼š
 
      #+INCLUDE: "~/.emacs.d.bak/.emacs" src emacs-lisp
-¿ÉÑ¡µÄµÚ¶ş¸öµÚÈı¸ö²ÎÊıÊÇ×éÖ¯·½Ê½£¨ÀıÈç£¬¡°quote¡±£¬¡°example¡±£¬»òÕß¡°src¡±£©£¬Èç¹ûÊÇ ¡°src¡±£¬ÓïÑÔÓÃÀ´¸ñÊ½»¯ÄÚÈİ¡£×éÖ¯·½Ê½ÊÇ¿ÉÑ¡µÄ£¬Èç¹û²»¸ø³ö£¬ÎÄ±¾»á±»µ±×÷ Org Ä£Ê½µÄÕı³£´¦Àí¡£ÓÃ C-c ,¿ÉÒÔ·ÃÎÊ°üº¬µÄÎÄ¼ş¡£
+å¯é€‰çš„ç¬¬äºŒä¸ªç¬¬ä¸‰ä¸ªå‚æ•°æ˜¯ç»„ç»‡æ–¹å¼ï¼ˆä¾‹å¦‚ï¼Œâ€œquoteâ€ï¼Œâ€œexampleâ€ï¼Œæˆ–è€…â€œsrcâ€ï¼‰ï¼Œå¦‚æœæ˜¯ â€œsrcâ€ï¼Œè¯­è¨€ç”¨æ¥æ ¼å¼åŒ–å†…å®¹ã€‚ç»„ç»‡æ–¹å¼æ˜¯å¯é€‰çš„ï¼Œå¦‚æœä¸ç»™å‡ºï¼Œæ–‡æœ¬ä¼šè¢«å½“ä½œ Org æ¨¡å¼çš„æ­£å¸¸å¤„ç†ã€‚ç”¨ C-c ,å¯ä»¥è®¿é—®åŒ…å«çš„æ–‡ä»¶ã€‚
 
-**** *Ç¶Èëlatex*
-¶ÔÓÚĞèÒª°üº¬ÊıÑ§·ûºÅºÍÌØÊâ·½³ÌµÄ¿ÆÑ§±Ê¼Ç£¬Org Ä£Ê½Ö§³ÖÇ¶Èë LaTeX ´úÂëµ½ÎÄ¼şÖĞ¡£Äã¿ÉÒÔÖ±½ÓÊ¹ÓÃÀà TeX µÄºêÀ´ÊäÈëÌØÊâ·ûºÅ£¬ÊäÈë·½³Ì£¬»òÕßÕû¸ö LaTeX »·¾³¡£
+**** *åµŒå…¥latex*
+å¯¹äºéœ€è¦åŒ…å«æ•°å­¦ç¬¦å·å’Œç‰¹æ®Šæ–¹ç¨‹çš„ç§‘å­¦ç¬”è®°ï¼ŒOrg æ¨¡å¼æ”¯æŒåµŒå…¥ LaTeX ä»£ç åˆ°æ–‡ä»¶ä¸­ã€‚ä½ å¯ä»¥ç›´æ¥ä½¿ç”¨ç±» TeX çš„å®æ¥è¾“å…¥ç‰¹æ®Šç¬¦å·ï¼Œè¾“å…¥æ–¹ç¨‹ï¼Œæˆ–è€…æ•´ä¸ª LaTeX ç¯å¢ƒã€‚
 
 Angles are written as Greek letters \alpha, \beta and \gamma. The mass if
 the sun is M_sun = 1.989 x 10^30 kg. The radius of the sun is R_{sun} =
@@ -209,35 +209,35 @@ $a=+\sqrt{2}$ or $a=-\sqrt{2}$.
 \begin{equation}
 x=\sqrt{b}
 \end{equation}
-ÌØÊâÉèÖÃÖ®ºó£¬µ¼³ö HTML Ê± LaTeX ´úÂëÆ¬¶Ï»áÉú³ÉÍ¼Æ¬²¢°üº¬½øÀ´¡£
+ç‰¹æ®Šè®¾ç½®ä¹‹åï¼Œå¯¼å‡º HTML æ—¶ LaTeX ä»£ç ç‰‡æ–­ä¼šç”Ÿæˆå›¾ç‰‡å¹¶åŒ…å«è¿›æ¥ã€‚
 * need to install [0/2]
 + [ ] find-file-project
 + [ ] multi cuorsor
 * config                                                             :config:
-** guiÏÂµÄÅäÖÃ
-spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
-** ÁÙÊ±µÄemacsÎªÁË¸ü¼ÓË³ÊÖ
+** guiä¸‹çš„é…ç½®
+spacemace å’Œ preludeæ„Ÿè§‰éƒ½å¯ä»¥
+** ä¸´æ—¶çš„emacsä¸ºäº†æ›´åŠ é¡ºæ‰‹
 #+BEGIN_SRC emacs-lisp
 ;;-------------------------------better default------------------------------------------
 
-;;ÔÚĞĞÊ×Ö´ĞĞC-kÊ±½«¸ÃĞĞÉ¾³ı
+;;åœ¨è¡Œé¦–æ‰§è¡ŒC-kæ—¶å°†è¯¥è¡Œåˆ é™¤
 (setq-default kill-whole-line t)
 
-;;Éè¶¨²»²úÊÇ±¸·İÎÄ¼ş
+;;è®¾å®šä¸äº§æ˜¯å¤‡ä»½æ–‡ä»¶
 (setq make-backup-files nil)
 (setq auto-save-mode nil)
 
-;;ÏÔÊ¾ĞĞÁĞºÅ
+;;æ˜¾ç¤ºè¡Œåˆ—å·
 ;;(global-linum-mode t)
-;;¹Ø±Õ·äÃùÉù
+;;å…³é—­èœ‚é¸£å£°
 (setq ring-bell-function 'ignore)
 
-;;¸ßÁÁÏÔÊ¾µ±Ç°ĞĞ
+;;é«˜äº®æ˜¾ç¤ºå½“å‰è¡Œ
 ;(global-hl-line-mode t)
 
-;;Ëõ½øÎÊÌâ
-(setq indent-tabs-mode nil) ;;²»²åÈëtab×Ö·û£¬ÒòÎªTABÊÇĞ°¶ñµÄ;ÊµÔÚĞèÒªTAB¼üÔòÓÃC-q TAB
-(setq default-tab-width 4) ;;Ã¿´ÎËõ½ø4¸ö¿Õ¸ñ
+;;ç¼©è¿›é—®é¢˜
+(setq indent-tabs-mode nil) ;;ä¸æ’å…¥tabå­—ç¬¦ï¼Œå› ä¸ºTABæ˜¯é‚ªæ¶çš„;å®åœ¨éœ€è¦TABé”®åˆ™ç”¨C-q TAB
+(setq default-tab-width 4) ;;æ¯æ¬¡ç¼©è¿›4ä¸ªç©ºæ ¼
 (setq tab-width 4)
 
 ;;abbrev-table
@@ -257,11 +257,11 @@ spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
 										 try-complete-lisp-symbol
 										 ))
 
-;;¼¤»î C-x C-j À´´ò¿ªÎÄ¼şËùÔÚÄ¿Â¼
+;;æ¿€æ´» C-x C-j æ¥æ‰“å¼€æ–‡ä»¶æ‰€åœ¨ç›®å½•
 (require 'dired-x)
 ;;yes-no --> y-n
 (fset 'yes-or-no-p 'y-or-n-p)
-;;Ñ¡ÖĞÌæ»»Ä£Ê½
+;;é€‰ä¸­æ›¿æ¢æ¨¡å¼
 (delete-selection-mode t)
 ;;
 (menu-bar-mode 0)
@@ -271,29 +271,29 @@ spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
 (setq dired-recursive-copies 'always)
 
 ;;hook
-(add-hook 'c-mode-common-hook 'hs-minor-mode)  ;ÔÚc-modeÏÂ½«hs-minor-mode´ò¿ª
+(add-hook 'c-mode-common-hook 'hs-minor-mode)  ;åœ¨c-modeä¸‹å°†hs-minor-modeæ‰“å¼€
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-;;--------------------------------------------------uiÉèÖÃ------------------------------------------------------
+;;--------------------------------------------------uiè®¾ç½®------------------------------------------------------
 (setq visible-bell t)
-;;¹Ø±Õ·³ÈËµÄ´íÎóÌáÊ¾Òô
+;;å…³é—­çƒ¦äººçš„é”™è¯¯æç¤ºéŸ³
 
-;;È¥µô¹¤¾ßÀ¸ ºÍ ¹ö¶¯Ìõ
+;;å»æ‰å·¥å…·æ  å’Œ æ»šåŠ¨æ¡
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-;;¹Ø±ÕgunsÆô¶¯Ê±µÄ»­Ãæ
+;;å…³é—­gunså¯åŠ¨æ—¶çš„ç”»é¢
 (setq inhibit-startup-message t)
 
-;;¹Ø±ÕgunsÆô¶¯Ê±µÄ»­Ãæ
+;;å…³é—­gunså¯åŠ¨æ—¶çš„ç”»é¢
 (setq gnus-inhibit-startup-message t)
 
-;;ÉèÖÃÖ÷Ìâ
+;;è®¾ç½®ä¸»é¢˜
 ;;(load-theme 'monokai t)
 
 ;(setq-default cursor-type 'box)
 (setq blink-cursor-mode nil)
 
 ;;----------------------------defun myself---------------------------
-;;¸ñÊ½»¯Õû¸öÎÄ¼şº¯Êı09
+;;æ ¼å¼åŒ–æ•´ä¸ªæ–‡ä»¶å‡½æ•°09
 (defun indent-buffer ()
   "Indent the whole buffer."
   (interactive)
@@ -303,21 +303,21 @@ spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
   (interactive)
   ;;(find-file "c:/Users/zhanghao/AppData/Roaming/dailyRecord/agenda.org")
   (find-file "~/.emacs"))
-;;ÀàËÆÓÚvim ÖĞµÄoµÄ¹¦ÄÜ
+;;ç±»ä¼¼äºvim ä¸­çš„oçš„åŠŸèƒ½
 (defun nextline()
   (interactive)
   (message "move to end of line")
   (move-end-of-line nil)
   (newline-and-indent)
   )
-;;Òş²ØÎÄ¼şÏµÍ³ÖĞµÄ^M·ûºÅ
+;;éšè—æ–‡ä»¶ç³»ç»Ÿä¸­çš„^Mç¬¦å·
 ;; (defun hidden-dos-eol ()
 ;;   "do not show ^M in this file"
 ;;   (interactive)
 ;;   (setq buffer-display-table (make-display-table))
 ;;   (aset buffer-display-table ?/^M [])
 ;;   )
-;;É¾³ıunixÎÄ¼şÏµÍ³ÖĞµÄ^M·ûºÅ
+;;åˆ é™¤unixæ–‡ä»¶ç³»ç»Ÿä¸­çš„^Mç¬¦å·
 (defun remove-dos-elo ()
   "Replace DOS end od lines CR with Unix eolns CR"
   (interactive)
@@ -334,10 +334,10 @@ spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
 (global-set-key (kbd "C-o") 'nextline)
 (global-set-key (kbd "C-<") 'shrink-window-horizontally)
 (global-set-key (kbd "C->") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-x C-r") 'counsel-recentf)  ;;´ò¿ª×î½ü´ò¿ªÎÄ¼ş
-(global-set-key [f5] 'hs-toggle-hiding) ;;ÕÛµş¿ªÆô¿ª¹Ø
-(global-set-key [f6] 'indent-buffer) ;;¸ñÊ½»¯Õû¸öbuffer
-(global-set-key (kbd "C-v") 'er/expand-region) ;;C-vÑ¡ÖĞµ¥´Ê
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)  ;;æ‰“å¼€æœ€è¿‘æ‰“å¼€æ–‡ä»¶
+(global-set-key [f5] 'hs-toggle-hiding) ;;æŠ˜å å¼€å¯å¼€å…³
+(global-set-key [f6] 'indent-buffer) ;;æ ¼å¼åŒ–æ•´ä¸ªbuffer
+(global-set-key (kbd "C-v") 'er/expand-region) ;;C-vé€‰ä¸­å•è¯
 
 ;;----------------------------bind my key like spacemace----------------
 (define-prefix-command 'ctl-j-map)
@@ -356,12 +356,62 @@ spacemace ºÍ prelude¸Ğ¾õ¶¼¿ÉÒÔ
 
 
 #+END_SRC
+** with plugins
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil)
+(setq indent-tabs-mode nil) ;;ä¸æ’å…¥tabå­—ç¬¦ï¼Œå› ä¸ºTABæ˜¯é‚ªæ¶çš„;å®åœ¨éœ€è¦TABé”®åˆ™ç”¨C-q TAB
+(setq default-tab-width 4) ;;æ¯æ¬¡ç¼©è¿›4ä¸ªç©ºæ ¼
+(setq tab-width 4)
+
+(require 'dired-x)
+(fset 'yes-or-no-p 'y-or-n-p)
+(menu-bar-mode 0)
+(global-set-key (kbd "C-v") 'set-mark-command)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(add-hook 'after-init-hook 'show-paren-mode)
+
+;;----------packages-----------
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
+
+(use-package company
+  :init
+  (add-hook 'after-init-hook 'global-company-mode)
+  )
+
+(use-package swiper
+  :init
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  :bind(
+        ("C-s" . swiper)
+        ("M-x" . counsel-M-x)
+        ("C-x C-f" . counsel-find-file)
+        )
+  )
+
+(use-package ace-jump-mode
+  :defer t
+  :bind(("C-c SPC" . ace-jump-mode)
+        )
+     )
+
+(use-package undo-tree
+  :defer t
+  :init
+  (global-undo-tree-mode)
+  :bind(
+        ("C-x u" . undo-tree-visualize)
+        )
+ )
+#+END_SRC
 
 * plugins
 ** counsel-ag
-+ ÓÃµÄÊÇÃüÁîĞĞÏÂµÄagÃüÁî
-+ Èç¹ûÒªÓĞĞèÒªºöÂÔµÄÎÄ¼ş£¬ÔÚËÑË÷Ä¿Â¼ÏÂĞÂ½¨Ò»¸ö.ignoreÎÄ¼ş£¬°ÑÎÄ¼şÃûĞ´½øÈ¥¾ÍĞĞ
++ ç”¨çš„æ˜¯å‘½ä»¤è¡Œä¸‹çš„agå‘½ä»¤
++ å¦‚æœè¦æœ‰éœ€è¦å¿½ç•¥çš„æ–‡ä»¶ï¼Œåœ¨æœç´¢ç›®å½•ä¸‹æ–°å»ºä¸€ä¸ª.ignoreæ–‡ä»¶ï¼ŒæŠŠæ–‡ä»¶åå†™è¿›å»å°±è¡Œ
 * tmp
 * Footnotes
 
-[fn:footprint1] ·Ö¸ô·û
+[fn:footprint1] åˆ†éš”ç¬¦
